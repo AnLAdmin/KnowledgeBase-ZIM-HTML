@@ -1,0 +1,719 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>18.04</title>
+	<meta name='Generator' content='Zim 0.75.2'>
+	<style type='text/css'>
+		a          { text-decoration: none }
+		a:hover    { text-decoration: underline }
+		a:active   { text-decoration: underline }
+		strike     { color: grey }
+		u          { text-decoration: none; background-color: yellow }
+		tt         { color: #2e3436; }
+		pre        { color: #2e3436; margin-left: 20px; margin-top: 0; margin-bottom: 0 }
+		h1         { text-decoration: underline; color: #4e9a06; margin: 0 }
+		h2         { color: #4e9a06; margin: 0 }
+		h3         { color: #4e9a06; margin: 0 }
+		h4         { color: #4e9a06; margin: 0 }
+		h5         { color: #4e9a06; margin: 0 }
+		p          { margin: 0 }
+		ul         { margin: 0 }
+		ol         { margin: 0 }
+		span.zim-tag {
+			color: #ce5c00;
+		}
+		div.zim-object {
+			border-style:solid;
+			border-width:1px;
+		}
+		.checked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8sMEGsKGkAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAEBUlEQVRIx62V22tdRRTGf7Nn73P2ybntnNOe3NqkPTGgLTVUUZF6QatSLOKTPgqCIqLgQ0H/A1sQQbBYCBb1QfAxiC8tSO1FqHkwJVKtjdTGNraUmObsc9nXmfGh7cGYpM1D5nHWzPetteZb3wg2eB2YqYm4zSadsMtoboiNBH/3TE0awx6j+MRoxoTg/IYRvP19TQrJS0bzhdHGSyKFkLTtjSKwMjyiEz43ynhtP6bdjBCWyFobAf7eT7VhNF/q1FRbjYjmUohlCVPwnB+6FUxMTJipqSmUUhhjEGKd3bMT4ks/Y6oLBK2Yth8hHYtCJXOix7Nf7xLMzc0xOzvLzp078TyPNE3viW3QJPXzhNWbxFFKHCmMhoLn/FHodd48vGfhapdAacXQlkFK5dL6wIUm6fuTZPuvqDQhaMUYYyiVyuQr6rXDexYuAdi3tSv1ZJNs/R/CaszzT+1na88uXFnCEnJVgivBNN8uTJKmHQI/ptOOcXNZzMz9mOqFs90OHpipWcYwlo5P4ebnuOkrvr5wgrH+h3im7y36MzuwRXYZeKha/OhP0EkadFoxQSdGSotedR/+XwMc2XvKdNUFOFqZx6LKZWIiwjgkikNmLp/hm8sH+K1zjFTHXfBYdTi+eJArzXM0GxFxoBDCopLvo/fqEwi1XPkWkGqjFo2TgB1jOYZUKZTS/D1/ncmLh7jon0IbRWoiTi59ymzzJEEQE3cStNZsGxqlfPE57MBbOR8fP3hDGalOO9fq2DlBvmZw8xa2IxACGn6TydlD/O6f5OzSV/zif0cYhLQaEXGkKBbz7Ov/AOlXV1cxgBJRI3fuSTrpTawt18kWIZN1CFuaONI0w0WOXfsI43YIggh/KUSlhqxrMz74AkOZcWBm9QkH+Gw8NDLuITi+m0yzhluSyJzBLcpblUhFxywSRAEtPwQjsKVN30CNh0uvYuOubSHLtN3J0TO1j0pmBNuFbFWRK0gyPRZpktL2I5JQkclKakNlnh54g6ocvevUr/Ai2a7wineEkcJupA3S1Wg0nVZM2E6wbEF5U5G9Q++wI7sfR7h3N8HVNstykBfzH+KJEZwiWD0aIwxCgJ0R1Mu7GXOeJSuK93bZtQIle4D9pUNU5DC5jEsu55AvZakM5NicGyEj8uuz8bUCQgj67QfY671P3vEoeC69gy695U1U7NG7XV0pUwBjDJa1/JJlWWxzHuflzQe5FJ/GsgUVuZ2t8lEkTvfc0aNHb72flBhjVicQQqCUuvM3/M+WDVguWBrMVdDXEGZlBVEUrVCU9d9s5+fnaTQa2PZyPxEIhJaI1EEoZwX4ncynp6fXrmB4eJjR0VFarRbNZnP9P9rt9gohqNVq1Ov1ZbF/AZGev3hLJ2/zAAAAAElFTkSuQmCC)}
+		.xchecked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8bDYnDxEwAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAEK0lEQVRIx9WVS2hTWRjHf/eR3CY1nbxMH2YiZRQS6qO13YlMVxY3SnVcuNIBFezGpSADLoQqLu1sHJCqdCFSXFpw4YOCSH3BtFqttTNamabX3DS5bfO6uffMoglja3RGcDMHzuac7/z/53++//cd+L8P6VuCPQYZ8ADNgBd4J31DcDcQs+GnHByRocEDv0kfBSjAOlYCs11Q+gpwDegS8LMJ+3QIK0ATzEhV8Odnz5bzw8P4dJ25aJQ/WlvJ1df/K7hSLtOcTNI+Pk69rpMTgqIQhCDvh1/VSpw79+gRrRMTmLZNezLJJsPg+a5dmOEwQlFqg1sWG16/Jv7sGWXDwBACFQjC9HcwIMONKkGp4PGAJGEDS0IQmZlhnWnye3c3eiyGo6qr3WHbrJ+dJf7gAXI6zSIr72T7/fgzmT4FHnTBsgrQBfYvTU0km5vxz86iADnAm0rRPTWFt7cXZccOJJcLAGHb2K9ekT93jmwmwwdAAFpjI6Ntbfxw5879ag7l6o1sr5eHHR3IsRgeQK/M4sQE+YEB7JcvEY6zAj45SWFgAPPxYwzHoQxIkQjTPT0kIxE+Noj8sexFn4/xnh58iQTeSpHkHAdrbIzi0BCOrmNPTpK/eJHM3bt8sCyKQCiR4NWePWSiUZw1+ZLXJm4pFKLhzBlCsRh2RUXacVgeGaF47RrL58+zcP8+RrmMkCQinZ1EL1zAjERqmkH+tLYl1G3bCJw4QUjT0IA0MJfLMX/5MqmHD0nZNiUgtGULG/r7ccXjINWuWbnmqsuFu7sb/4EDNLlcBIEioNs2KUAFGmMxmk6dQm1tRZI+3xBqEkiShBQOox05Ql1nJ26gvuIUAWiKQnj/ftStW5Fk+YuF+NldsbBA4cYN9KdPmaso8Fc62ZJtk7l1C2t0FGdxESHE1xE4hkHh6lX0oSHSpRIewC/LrPf7CSgKNpCamkI/fZr8pUuIZBIcpyaBunahPp1mub+fDyMjGKUSChCsq6Nh717q9u2jbnSU0uAgRrFIwTThyhUCqRS+hgZKLS1fJvDm87SNjZGcnsYUAjcQ8vsJ9/Xh7u1FDgRQN20iks3iDA+zZFmYhQLqzZtsj8WY3L0baY2Sf55ICCKpFHUzM2SEQAJCHg+hY8fQDh5EDgRWDoRC1J88SePRo2geD0XAcBy8b98Sv3ePYDZbbf2rFQjLIphMsmDbaEBQVQkePox26BCSz7e6i4bDrDt+nGYhmBscpFAskheC4Js3bPR4qHphFYEnlcI7P4/jdqNpGu8TCe4oCsXr1z//F2ga3+/cSfTJE0qmSVYIsKzaOZDcbjKyzFIiwfvt21kMBLA07YsetzWNd+3tLLW0sH5igvT8PH9Go/z44kX+E4LGjg7GDYOcy4XlOEgLC//5P/5LCFzxOPLmzWyIx+m6fduu7v0NVGqyTSycKksAAAAASUVORK5CYII=)}
+		.unchecked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8qAt8h3m8AAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAA60lEQVRIx+2VsQqDMBRF70sCLg5OLoKgjk7+lJ/hh+STXBwcnRz8ArMEkrxOFktbaC3tULzTg5e8k5vADXDq70VbobXmvu/hvQczg4heHrJfXxQFuq67blZbMc8zpmlCXddIkgTOuZcBUko45zCOI6y1Nz2xFSEEZFmGOI7fGg4A3nsQEZqmuXOu9jallACAtm3fvmutNaIoAjM/dkBECCF89KCbk4eAb+kEnIAT8EsAM0OIz3hSyrssUvss8t5fg+uIrLXPs0gIgWVZYIyBUurQyYdheO4gz3NUVQVjDNZ1PfSjpWmKsixvehfB9GBZ3NndrgAAAABJRU5ErkJggg==)}
+		.migrated-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB+AKHREFA8vJSnkAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAC1klEQVRIx+2VT0hUURTGf/e958w4Tc3TYowMw1GyEgwr1MqsFmbZIrIWQZsWJUjbdoHQpl3Qps0swnCRECQFYkR/TC1iKkqmfzAKTo2Vf8hoRsfR995tkRMT87RRWkUHHhy495zvnvvu933wP/75EKkkEAjIYDCIaZpIKRFCZN0kfX9xcTGtra2/irVUEolECIfDlJeXo+s6hmFkDaCqKoZhEAqFSCaTv60pqcSyLAoLC/F4PEtqDmCaJkIIKisrMybX0sdUVRWA5ubmPzdNjjI1cpXkZC/O1fV03PXgdDqRUtpPIITAsqxsDz0Z/3CZQv8uqo4N4C8/Tp2/DdM0MiZQlvk41OTkI/LW1SGtCVb5drD3eCc71wcA+VcAHA5vDd8+3UGakxiJV7i9pdQevU5T1R35pJ3MV5QW1pf+0kWBheJ2SWua8EQXZXsu4fVVYEz1sEKvof5EuxjoPvzpcRvrdp9C2gGMx6cpOHBmbImMesds7BZubwMVDTfXDnQ3vQfK7AC8wLfExMX5whyQc3q2OEnjGm5vE76SQxsfBLr77a7CNf+n0r/l6sSMtsBSnurckiIILCobAtVZhpF4gZF4jubaymj4Ch/fd380LE7bAnjc0NPxk2yqpmEuwGxF0ag+0k5uTpzZeBeaazvj0We8fXojainsb2xh2BZgbe0gSIllzSIUh63wfQ6dZ/O2fbjcKlOj58jJ3cVENESw5yErc9nf2MLQ4jwQAkV1Lqiq37/cZ9WaahJjF9AcmxiPDhLs7ePe23oOnmUwg2hSShQle96tKDjA2HAniusgo9FxnvY9Jxw7RWzGYy92QghM00x5g53qp9sHmtB58/o2umOI2NwGolMnMYUHIb7aAyiKwsjICLqu2/qBEIKUUAohMaSHSLyBSMoPTINQ6CX5+fn2AEVFRZSUlBCPx4nFYhl3L4RESjF/GEgX3pSj+Xw+/H7/b3U/AEOZFnp7O5+5AAAAAElFTkSuQmCC)}
+		ul {list-style-image: none}
+		/* ul rule needed to reset style for sub-bullets */
+
+		span.insen { color: grey                }
+
+		.pages {
+			max-width: 1000px;
+			 padding-left: 320px;
+		}
+		.menu{
+			float:left; width: 300px;
+		}
+		hr{clear:both;}
+	</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class='header'>
+	[ <a href='../Ubuntu.html'>Prev</a> ]
+
+	[ <a href='../../../../index.html'>Index</a> ]
+
+	[ <a href='./rua=mailto.html'>Next</a> ]
+</div>
+
+<hr />
+
+<div class="menu">
+<ul>
+<li><a href="../../../../Concepts.html" title="Concepts" class="page">Concepts</a></li>
+<li><a href="../../../../Glossary.html" title="Glossary" class="page">Glossary</a></li>
+<li><a href="../../../../Hardware.html" title="Hardware" class="page">Hardware</a></li>
+<li><a href="../../../../Services.html" title="Services" class="page">Services</a></li>
+<li><a href="../../../../Software.html" title="Software" class="page">Software</a>
+<ul>
+<li><a href="../../../acme.sh.html" title="acme.sh" class="page">acme.sh</a></li>
+<li><a href="../../../Ansible.html" title="Ansible" class="page">Ansible</a></li>
+<li><a href="../../../APC_PowerChute_Network_Shutdown.html" title="APC PowerChute Network Shutdown" class="page">APC PowerChute Network Shutdown</a></li>
+<li><a href="../../../apcupsd.html" title="apcupsd" class="page">apcupsd</a></li>
+<li><a href="../../../apt.html" title="apt" class="page">apt</a></li>
+<li><a href="../../../ar.html" title="ar" class="page">ar</a></li>
+<li><a href="../../../AROS.html" title="AROS" class="page">AROS</a></li>
+<li><a href="../../../awk.html" title="awk" class="page">awk</a></li>
+<li><a href="../../../Bash.html" title="Bash" class="page">Bash</a></li>
+<li><a href="../../../Buildah.html" title="Buildah" class="page">Buildah</a></li>
+<li><a href="../../../dd.html" title="dd" class="page">dd</a></li>
+<li><a href="../../../ddclient.html" title="ddclient" class="page">ddclient</a></li>
+<li><a href="../../../debconf.html" title="debconf" class="page">debconf</a></li>
+<li><a href="../../../Debian.html" title="Debian" class="page">Debian</a></li>
+<li><a href="../../../DiskShadow.html" title="DiskShadow" class="page">DiskShadow</a></li>
+<li><a href="../../../dnsmasq.html" title="dnsmasq" class="page">dnsmasq</a></li>
+<li><a href="../../../Docker.html" title="Docker" class="page">Docker</a></li>
+<li><a href="../../../Doskey.html" title="Doskey" class="page">Doskey</a></li>
+<li><a href="../../../findmnt.html" title="findmnt" class="page">findmnt</a></li>
+<li><a href="../../../Firefox.html" title="Firefox" class="page">Firefox</a></li>
+<li><a href="../../../fuse-overlayfs.html" title="fuse-overlayfs" class="page">fuse-overlayfs</a></li>
+<li><a href="../../../Git.html" title="Git" class="page">Git</a></li>
+<li><a href="../../../Gitea.html" title="Gitea" class="page">Gitea</a></li>
+<li><a href="../../../GnuCash.html" title="GnuCash" class="page">GnuCash</a></li>
+<li><a href="../../../Google_Backup_and_Sync.html" title="Google Backup and Sync" class="page">Google Backup and Sync</a></li>
+<li><a href="../../../Google_Drive.html" title="Google Drive" class="page">Google Drive</a></li>
+<li><a href="../../../grep.html" title="grep" class="page">grep</a></li>
+<li><a href="../../../grub-btrfs.html" title="grub-btrfs" class="page">grub-btrfs</a></li>
+<li><a href="../../../host.html" title="host" class="page">host</a></li>
+<li><a href="../../../iftop.html" title="iftop" class="page">iftop</a></li>
+<li><a href="../../../incron.html" title="incron" class="page">incron</a></li>
+<li><a href="../../../Javascript.html" title="Javascript" class="page">Javascript</a></li>
+<li><a href="../../../less.html" title="less" class="page">less</a></li>
+<li><a href="../../../Linux.html" title="Linux" class="page">Linux</a></li>
+<li><a href="../../../lsof.html" title="lsof" class="page">lsof</a></li>
+<li><a href="../../../Lxd.html" title="Lxd" class="page">Lxd</a></li>
+<li><a href="../../../Micro.html" title="Micro" class="page">Micro</a></li>
+<li><a href="../../../Midnight_Commander.html" title="Midnight Commander" class="page">Midnight Commander</a></li>
+<li><a href="../../../MS_Office.html" title="MS Office" class="page">MS Office</a></li>
+<li><a href="../../../MSYS2.html" title="MSYS2" class="page">MSYS2</a></li>
+<li><a href="../../../newgrp.html" title="newgrp" class="page">newgrp</a></li>
+<li><a href="../../../Nextcloud.html" title="Nextcloud" class="page">Nextcloud</a></li>
+<li><a href="../../../NGINX.html" title="NGINX" class="page">NGINX</a></li>
+<li><a href="../../../NixOS.html" title="NixOS" class="page">NixOS</a></li>
+<li><a href="../../../Node-RED.html" title="Node-RED" class="page">Node-RED</a></li>
+<li><a href="../../../NPM.html" title="NPM" class="page">NPM</a></li>
+<li><a href="../../../OpenSSL.html" title="OpenSSL" class="page">OpenSSL</a></li>
+<li><a href="../../../Partclone.html" title="Partclone" class="page">Partclone</a></li>
+<li><a href="../../../Podman.html" title="Podman" class="page">Podman</a></li>
+<li><a href="../../../Postfix.html" title="Postfix" class="page">Postfix</a></li>
+<li><a href="../../../PostgreSQL.html" title="PostgreSQL" class="page">PostgreSQL</a></li>
+<li><a href="../../../pyCharm.html" title="pyCharm" class="page">pyCharm</a></li>
+<li><a href="../../../Python.html" title="Python" class="page">Python</a></li>
+<li><a href="../../../Redis.html" title="Redis" class="page">Redis</a></li>
+<li><a href="../../../Rust.html" title="Rust" class="page">Rust</a></li>
+<li><a href="../../../Snapper.html" title="Snapper" class="page">Snapper</a></li>
+<li><a href="../../../SSH.html" title="SSH" class="page">SSH</a></li>
+<li><a href="../../../stat.html" title="stat" class="page">stat</a></li>
+<li><a href="../../../Systemd.html" title="Systemd" class="page">Systemd</a></li>
+<li><a href="../../../TortoiseHG_(Mercurail_SCM).html" title="TortoiseHG (Mercurail SCM)" class="page">TortoiseHG (Mercurail SCM)</a></li>
+<li><a href="../../../Traefik.html" title="Traefik" class="page">Traefik</a></li>
+<li><a href="../../../Ubuntu.html" title="Ubuntu" class="page">Ubuntu</a></li>
+<li><a href="../../../UFW.html" title="UFW" class="page">UFW</a></li>
+<li><a href="../../../update-alternatives.html" title="update-alternatives" class="page">update-alternatives</a></li>
+<li><a href="../../../Uptime_Kuma.html" title="Uptime Kuma" class="page">Uptime Kuma</a></li>
+<li><a href="../../../UrBackup.html" title="UrBackup" class="page">UrBackup</a></li>
+<li><a href="../../../Visual_Studio_Code.html" title="Visual Studio Code" class="page">Visual Studio Code</a></li>
+<li><a href="../../../Vssadmin.html" title="Vssadmin" class="page">Vssadmin</a></li>
+<li><a href="../../../w.html" title="w" class="page">w</a></li>
+<li><a href="../../../wc.html" title="wc" class="page">wc</a></li>
+<li><a href="../../../whereis.html" title="whereis" class="page">whereis</a></li>
+<li><a href="../../../which.html" title="which" class="page">which</a></li>
+<li><a href="../../../Windows.html" title="Windows" class="page">Windows</a></li>
+<li><a href="../../../winget.html" title="winget" class="page">winget</a></li>
+<li><a href="../../../Zimbra.html" title="Zimbra" class="page">Zimbra</a>
+<ul>
+<li><a href="../../Architecture.html" title="Architecture" class="page">Architecture</a></li>
+<li><a href="../../Documentation.html" title="Documentation" class="page">Documentation</a></li>
+<li><a href="../../Installation.html" title="Installation" class="page">Installation</a>
+<ul>
+<li><a href="../Ubuntu.html" title="Ubuntu" class="page">Ubuntu</a>
+<ul>
+<li><b>18.04</b></li>
+<li><a href="./rua=mailto.html" title="rua=mailto" class="page">rua=mailto</a></li>
+</ul></li>
+</ul></li>
+<li><a href="../../Operation.html" title="Operation" class="page">Operation</a></li>
+<li><a href="../../Uninstallation.html" title="Uninstallation" class="page">Uninstallation</a></li>
+</ul></li>
+<li><a href="../../../ZIM-Desktop.html" title="ZIM-Desktop" class="page">ZIM-Desktop</a></li>
+</ul></li>
+</ul>
+
+</div>
+
+<!-- Wiki content -->
+
+<div class='pages'>
+	<div class='heading'>
+	<h1>18.04 <a name='Software:Zimbra:Installation:Ubuntu:18.04'></a></h1>
+	</div>
+
+	<div class='content'>
+	<p>
+Created Samstag 05 September 2020
+</p>
+<br>
+<p>
+Zimbra 8.7+
+</p>
+<br>
+<h3>Preparation<a id="preparation" class="h_anchor"></a></h3>
+<p>
+<tt># apt update</tt><br>
+<tt># apt full-upgrade</tt>
+</p>
+<br>
+<p>
+Make certain that the MX and the corresponding A record point to the new Zimbra server.<br>
+<tt># dig mx &lt;mail domain name&gt; (e.g. domain.com)</tt><br>
+<tt># dig a &lt;mail server service name&gt; (e.g. mail.domain.com) -&gt; Does not to be the same as the host name.</tt>
+</p>
+<br>
+<p>
+Disable ufw:<br>
+<tt># ufw disable</tt>
+</p>
+<br>
+<h3>Zimbra installation<a id="zimbra-installation" class="h_anchor"></a></h3>
+<p>
+Download Zimbra package:<br>
+<tt># wget &lt;URL to zimbra package&gt; (</tt><a href="https://zimbra.org/download/zimbra-collaboration" title="Zimbra Download page" class="https"><tt>Zimbra Download page</tt></a><tt>)</tt><br>
+Save package needed for backup restore.<br>
+<tt># tar xzvf  /root/&lt;zimbra package&gt;</tt><br>
+<tt># cd &lt;zcs dir.&gt;</tt><br>
+<tt># ./install.sh61mb0</tt>
+</p>
+<br>
+<p>
+Enter <b>Y</b> for the <b>ldap, logger, mta, dns-cache, snmp, store, apache, spell, memcached and proxy</b> (not necessary) packages.<br>
+<u>MY NOTE: Do not install dns-cache if systemd-resolved is installed.</u><br>
+Change domain name? [Yes] yes (Note: This changes the mail domain NOT the FQDN of the server)<br>
+Create domain: &lt;mail domain name&gt;  (e.g. domain.com)<br>
+Main menu<br>
+<div style='padding-left: 30pt'>
+Set admin Password:
+</div>
+<div style='padding-left: 60pt'>
+3<br>
+4<br>
+Type passwort &lt;Enter&gt;<br>
+r
+</div>
+a (apply)<br>
+&lt;Enter&gt;<br>
+[/opt/zimbra/config.7101] &lt;Enter&gt;<br>
+y<br>
+Optional YES to notify Zimbra about the installation<br>
+press return ro exit<br>
+As zimbra: zmcontrol status<br>
+-&gt; All services should run<br>
+Connect to Zimbra webmail: https://&lt;IP address&gt; or https://&lt;mail host name&gt;<br>
+Connect to Zimbra management: https:<i>&lt;IP address&gt;:7071/ or https://&lt;mail host name&gt;</i>:7071///
+</p>
+<br>
+<h3>Configure firewall<a id="configure-firewall" class="h_anchor"></a></h3>
+<p>
+<tt># nano /etc/ufw/applications.d/zimbra</tt>
+</p>
+<div class="zim-object">
+<pre><code class="ini">[Zimbra]
+title=Zimbra Collaboration Server
+description=Open source server for email, contacts, calendar, and more.
+ports=25,636,443,465,587,993,7071/tcp|514/udp
+
+</code></pre>
+</div>
+<br>
+<p>
+<tt># ufw allow zimbra</tt>
+</p>
+<br>
+<h3>OPTIONALLY: Workaround - DNS resolution problem<a id="optionally-workaround---dns-resolution-problem" class="h_anchor"></a></h3>
+<br>
+<h4>Variant 1<a id="variant-1" class="h_anchor"></a></h4>
+<p>
+If ping &lt;some DNS name&gt; not resolve -&gt; Temporary failure in name resolution execute the following:<br>
+Remove systemd-resolved IP:<br>
+zimbra$ zmprov ms `zmhostname` -zimbraDNSMasterIP 127.0.0.53<br>
+Add my DNS server:<br>
+zimbra$ zmprov ms `zmhostname` +zimbraDNSMasterIP &lt;DNS server 1&gt;<br>
+zimbra$ zmprov ms `zmhostname` +zimbraDNSMasterIP &lt;DNS server 2&gt;<br>
+Check result:<br>
+zmprov getServer `zmhostname` | grep DNSMasterIP<br>
+Restart unbound/zimbra dns cache (OPTIONAL):<br>
+zimbra$ zmdnscachectl reload
+</p>
+<br>
+<h4>Variant 2<a id="variant-2" class="h_anchor"></a></h4>
+<p>
+<a href="../../Uninstallation/Ubuntu.html#uninstall-zimbra-dns-cache" title="Uninstall" class="page">Uninstall</a> Zimbra DNS-Cache.
+</p>
+<br>
+<h3>Configure mail domains<a id="configure-mail-domains" class="h_anchor"></a></h3>
+<p>
+Connect to <a href="../../Operation/Management/Management_site/Access.html" title="Zimbra mgmt" class="page">Zimbra mgmt</a>.
+</p>
+<br>
+<h4>Create local domain<a id="create-local-domain" class="h_anchor"></a></h4>
+<p>
+This is to make certain that it's possible to login when a Virtual Host is set for one domain or AD authentication makes toubles..<br>
+Go to Configure - Domains<br>
+Click <b><span class="zim-tag">@New</span></b> and enter the following in the wizard:<br>
+General information:<br>
+<div style='padding-left: 30pt'>
+Domain name: &lt;host name FQDN&gt;
+</div>
+GAL Mode Settings:<br>
+<div style='padding-left: 30pt'>
+Mail Server: &lt;host name FQDN&gt;
+</div>
+SSO:<br>
+<div style='padding-left: 30pt'>
+-
+</div>
+Authentication Mode:<br>
+<div style='padding-left: 30pt'>
+Authentication mechanism: internal
+</div>
+Virtual Hosts:<br>
+<div style='padding-left: 30pt'>
+-
+</div>
+Advanced:<br>
+<div style='padding-left: 30pt'>
+-
+</div>
+Feature:<br>
+<div style='padding-left: 30pt'>
+-
+</div>
+Click <b>Finish</b>.
+</p>
+<br>
+<p>
+Add root alias to default admin account. -&gt; Enables forwarding of local mails to root without. <i>The .forward has no effect.</i>
+</p>
+<br>
+<h4>Configure &lt;host name FQDN&gt; domain<a id="configure-host-name-fqdn-domain" class="h_anchor"></a></h4>
+<p>
+Go to Configure - Domains<br>
+Double click and enter the following in the wizard:<br>
+General information:<br>
+<div style='padding-left: 30pt'>
+Public service host name: &lt;mail domain name&gt;<br>
+Inbound SMTP host name: &lt;mail domain name&gt;
+</div>
+GAL Mode Settings:<br>
+<div style='padding-left: 30pt'>
+Mail Server: &lt;host name FQDN&gt;
+</div>
+SSO:<br>
+<div style='padding-left: 30pt'>
+-
+</div>
+Authentication:<br>
+<div style='padding-left: 30pt'>
+-
+</div>
+Virtual Hosts:<br>
+<div style='padding-left: 30pt'>
+Add &lt;mail domain name&gt;
+</div>
+Feature:<br>
+<div style='padding-left: 30pt'>
+-
+</div>
+Advanced:<br>
+<div style='padding-left: 30pt'>
+Company identifier in public share prompts: &lt;Company name&gt;
+</div>
+Free/Busy:<br>
+<div style='padding-left: 30pt'>
+-
+</div>
+Zimlets:<br>
+<div style='padding-left: 30pt'>
+-
+</div>
+Themes:<br>
+<div style='padding-left: 30pt'>
+-
+</div>
+Certificate:<br>
+<div style='padding-left: 30pt'>
+-
+</div>
+Click <b>Save</b>.
+</p>
+<br>
+<h5>OPTIONALLY Active Directory authentication<a id="optionally-active-directory-authentication" class="h_anchor"></a></h5>
+<p>
+(<a href="https://wiki.zimbra.com/wiki/Configure_authentication_with_Active_Directory" title="Src" class="https">Src</a>)<br>
+Select domain and choose <b>Configure Authentication</b> from the property menu. Enter the following in the wizard:<br>
+Authentication Mode:<br>
+<div style='padding-left: 30pt'>
+Authenticationmode for this domain mechanism: External Active Directory
+</div>
+Authentication Settings:<br>
+<div style='padding-left: 30pt'>
+AD domain name:	&lt;AD domain name&gt;<br>
+AD Server: &lt;AD Server&gt;, &lt;port&gt;, Disable <b>Use SSL</b>
+</div>
+Authentication Config Summary:<br>
+<div style='padding-left: 30pt'>
+Enable <b>Use DN/Password to bind</b><br>
+Bind DN: &lt;Bind DN&gt;
+</div>
+External Group Settings:<br>
+<div style='padding-left: 30pt'>
+-
+</div>
+</p>
+<br>
+<br>
+<h5>OPTIONALLY Configure mail relay<a id="optionally-configure-mail-relay" class="h_anchor"></a></h5>
+<p>
+(<a href="\\ghome\data\Library\Information\Network\Mail\Zimbra\Sending mail through an external relay - Zimbra Tech Center.html" title="Src" class="smb">Src</a>, <a href="https://wiki.zimbra.com/wiki/Sending_mail_through_an_external_relay" title="Orig" class="https">Orig</a>)<br>
+This is necessary if you use dynamic DNS. With a changing IP address anti-SPAM system could put your server on a blacklist.
+</p>
+<br>
+<p>
+Set <b>Relay MTA for external delivery</b> for all MTAs:<br>
+<tt>zimbra$ zmprov mcf zimbraMtaRelayHost &lt;MTA external 1&gt;:&lt;MTA external 1 port&gt;</tt><br>
+To check settings use the command <b>getConfig</b> short <b>gcf</b> without value. E.g.:<br>
+<tt>zimbra$ zmprov gcf zimbraMtaRelayHost</tt><br>
+Disable <b>MTA DNS lookup</b> for all MTAs:<br>
+<tt>zimbra$ zmprov mcf zimbraMtaSmtpDnsSupportLevel disabled</tt><br>
+Set server name, user name and password<br>
+<tt>zimbra$ echo &lt;MTA external 1&gt; &lt;relay user name&gt;:&lt;relay password&gt; &gt; /opt/zimbra/conf/relay_password</tt><br>
+Create a postfix lookup table:<br>
+<tt>zimbra$ postmap /opt/zimbra/conf/relay_password</tt><br>
+To test that the lookup table is correct, the following should return username:password:<br>
+<tt>zimbra$ postmap -q &lt;MTA external 1&gt; /opt/zimbra/conf/relay_password</tt><br>
+Configure postfix to use the new password map:<br>
+<tt>zimbra$ zmprov mcf zimbraMtaSmtpSaslPasswordMaps lmdb:/opt/zimbra/conf/relay_password</tt><br>
+Configure postfix to use SSL authentication:<br>
+<tt>zimbra$ zmprov mcf zimbraMtaSmtpSaslAuthEnable yes</tt><br>
+Configure postfix to use the outgoing servername rather than the canonical server name:<br>
+<tt>zimbra$ zmprov mcf zimbraMtaSmtpCnameOverridesServername no</tt><br>
+Enable TLS:<br>
+<tt>zimbra$ zmprov mcf zimbraMtaSmtpTlsSecurityLevel may</tt><br>
+Enable plain text password:<br>
+<tt>zimbra$ zmprov mcf zimbraMtaSmtpSaslSecurityOptions noanonymous</tt>
+</p>
+<br>
+<p>
+-&gt; Postfix reloads configuration after 2min (Zimbra &gt;8.5) else:<br>
+zimbra$ postfix reload
+</p>
+<br>
+<p>
+<b>Set</b> <b>only for MTA of one server</b><br>
+Replace mcf/gcf with <i>ms `zmhostname`</i>/<i>gs</i> <i>`zmhostname`</i> or <i>ms &lt;host name FQDN&gt;</i>/<i>gs &lt;host name FQDN&gt;</i>.<br>
+E.g.<br>
+<tt>zimbra$ zmprov ms server.domain.com zimbraMtaRelayHost mailrelay.example.com</tt>
+</p>
+<br>
+<h2>Security<a id="security" class="h_anchor"></a></h2>
+<br>
+<h3>DKIM<a id="dkim" class="h_anchor"></a></h3>
+<p>
+(<a href="https://zimbra.github.io/adminguide/8.8.15/index.html#_using_dkim_to_authenticate_email_message" title="Orig" class="https">Orig</a>)<br>
+<tt>zimbra$ /opt/zimbra/libexec/zmdkimkeyutil -a -d &lt;mail domain name&gt;  [-s &lt;DKIM selector&gt;]</tt><br>
+-&gt; If you not specifiy a selector zimbra will create one in form of an UUID.
+</p>
+<br>
+<p>
+Create DNS TXT record in internal and/or external DNS.<br>
+e.g. &lt;DKIM selector&gt;._domainkey TXT v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBA....wIDAQAB<br>
+Reload DNS. Verify DNS record:<br>
+<tt>zimbra$ dig -t txt &lt;SELECTOR&gt;._domainkey.&lt;DOMAIN&gt; &lt;NAMESERVER&gt;</tt><br>
+-&gt; Windows Server DNS: See this <a href="https://xeams.com/ms-dns.htm" title="article" class="https">article</a> if not the whole key is show
+</p>
+<br>
+<p>
+Verify that public key matches private key:<br>
+<tt>zimbra$ /opt/zimbra/opendkim/sbin/opendkim-testkey -d &lt;mail domain name&gt; -s &lt;DKIM selector&gt; -x /opt/zimbra/conf/opendkim.conf</tt>
+</p>
+<br>
+<p>
+Validate DKIM in mails with <a href="http://dkimvalidator.com/" title="Online validator" class="http">Online validator</a>.<br>
+Output Zimbra DKIM settings:<br>
+<tt>zimbra$ /opt/zimbra/libexec/zmdkimkeyutil -q -d &lt;mail domain name&gt;</tt>
+</p>
+<br>
+<h3>DMARC<a id="dmarc" class="h_anchor"></a></h3>
+<p>
+Create a report &lt;DMARC email address&gt;.<br>
+Create DNS TXT entry in internal and external DNS.<br>
+_dmarc TXT v=DMARC1\; p=none\; rua=mailto:&lt;DMARC email address&gt;<br>
+e.g. _dmarc TXT v=DMARC1\; p=none\; <a href="./rua=mailto/dmarc@example.com.html" title="rua=mailto:dmarc@example.com" class="page">rua=mailto:dmarc@example.com</a><br>
+Verify result with <a href="https://dmarcian.com/dmarc-inspector/<Domain.tld>" title="Online service" class="https">Online service</a>.
+</p>
+<br>
+<h3>Commercial certificate as LE<a id="commercial-certificate-as-le" class="h_anchor"></a></h3>
+<h4>Acme configuration<a id="acme-configuration" class="h_anchor"></a></h4>
+<p>
+Follow the following (The acme.sh deploy modul script misses copying the key file)(<a href="https://wiki.zimbra.com/wiki/Installing_a_LetsEncrypt_SSL_Certificate" title="Orig" class="https">Orig</a>) to configure acme to install a certificate:<br>
+Install the acme.sh client.<br>
+Prepare acme.sh installation for use with zimbra user:<br>
+Add zimbra user to acme.sh group:<br>
+acme.sh:x:1001:zimbra<br>
+Set letsencrypt CA and ISRG Root X1 as CA chain via acme.sh user:<br>
+<tt>$ acme.sh --set-default-ca --server letsencrypt</tt><br>
+<tt>$ acme.sh --set-default-chain --preferred-chain ISRG --server letsencrypt</tt><br>
+Create a deploy hook script /opt/acme.sh/deploy
+</p>
+<div class="zim-object">
+<pre><code class="sh">#!/bin/bash
+
+# Zimbra Assumptions:
+# 1) acme.sh is installed as Zimbra
+# 2) see: https://wiki.zimbra.com/wiki/index.php?curid=2441
+
+######## Public functions #####################
+
+#domain keyfile certfile cafile fullchain
+zimbra_deploy() {
+  _cdomain="$1"
+  _ckey="$2"
+  _ccert="$3"
+  _cca="$4"
+  _cfullchain="$5"
+
+  _debug _cdomain "$_cdomain"
+  _debug _ckey "$_ckey"
+  _debug _ccert "$_ccert"
+  _debug _cca "$_cca"
+  _debug _cfullchain "$_cfullchain"
+
+  # Zimbra's javastore still needs ISRG Root X1 to verify on some versions
+  _isrgrootx1="$(dirname "$_cca")/ISRG_Root_X1.cer"
+  _debug _isrgrootx1 "$_isrgrootx1"
+
+  # grab it if we don't have it
+  if [ ! -f "$_isrgrootx1" ]; then
+    _debug No "$_isrgrootx1"
+    wget -q "https://letsencrypt.org/certs/isrgrootx1.pem.txt" -O "$_isrgrootx1" || return 1
+  fi
+
+  # append Intermediate
+  cat "$_cca" "$_isrgrootx1" &gt; "$(dirname "$_cca")/${_cdomain}.chained.cer"
+  _debug "Zimbra certificates verification starting."
+  /opt/zimbra/bin/zmcertmgr verifycrt comm "$_ckey" "$_ccert" "$(dirname "$_cca")/${_cdomain}.chained.cer" || return 1
+  _debug "Zimbra certificates verification done."
+
+  #if it verifies we can deploy it
+  _debug "Zimbra certificates installation starting."
+  /opt/zimbra/bin/zmcertmgr deploycrt comm "$_ccert" "$(dirname "$_cca")/${_cdomain}.chained.cer" || return 1
+  _debug "EUREKA. Zimbra certificates installation done."
+  return 0
+}
+</code></pre>
+</div>
+<p>
+Change to zimbra user <b>su - zimbra</b>.<br>
+Deploy and save config:<br>
+<tt>zimbra$ /opt/acme.sh/acme.sh --home /opt/acme.sh --deploy -d mail.graemi.ch --deploy-hook zimbra [--debug 2]</tt> <br>
+<div style='padding-left: 30pt'>
+--debug 2: Can help with issues
+</div>
+</p>
+<br>
+<p>
+Create crontab for certificate renewal:<br>
+<tt>zimbra$ crontab -e</tt><br>
+Put the following after <b># ZIMBRAEND</b> in th crontab:
+</p>
+<div class="zim-object">
+<pre><code class="ini"># ZIMBRAEND -- DO NOT EDIT ANYTHING BETWEEN THIS LINE AND ZIMBRASTART
+0 0 * * * "/opt/acme.sh"/acme.sh --cron --home "/opt/acme.sh" --config-home "/etc/acme.sh" --force-color &gt; /dev/null
+</code></pre>
+</div>
+<br>
+<h4>Zimbra configuration<a id="zimbra-configuration" class="h_anchor"></a></h4>
+<p>
+Change the LDAP access to SSL (<a href="https://wiki.zimbra.com/wiki/How_to_enable_ldaps" title="Orig" class="https">Orig</a>):<br>
+<tt>zimbra$ zmlocalconfig -e ldap_master_url=ldaps://&lt;host name FQDN&gt;:636</tt><br>
+<tt>zimbra$ zmlocalconfig -e ldap_url=ldaps://&lt;host name FQDN&gt;:636</tt><br>
+<tt>zimbra$ zmlocalconfig -e ldap_starttls_supported=0</tt><br>
+<tt>zimbra$ zmlocalconfig -e ldap_port=636</tt><br>
+<tt>zimbra$ zmcontrol restart</tt>
+</p>
+<br>
+<h2>Global configuration<a id="global-configuration" class="h_anchor"></a></h2>
+<p>
+Connect to <a href="../../Operation/Management/Management_site/Access.html" title="Zimbra mgmt" class="page">Zimbra mgmt</a>.<br>
+Browse to Configure - Global Settings - ...<br>
+Things not mentioned here are not changed.
+</p>
+<br>
+<h3>Class of Service<a id="class-of-service" class="h_anchor"></a></h3>
+<p>
+...
+</p>
+<br>
+<h3>Servers<a id="servers" class="h_anchor"></a></h3>
+<p>
+Double the click server.
+</p>
+<br>
+<h4>General information<a id="general-information" class="h_anchor"></a></h4>
+<p>
+Description:		&lt;Server description&gt;<br>
+LMTP advertised:	&lt;mail server service name&gt;
+</p>
+<br>
+<h3>Global Settings<a id="global-settings" class="h_anchor"></a></h3>
+<br>
+<h4>MTA<a id="mta" class="h_anchor"></a></h4>
+<ul>
+<li class="unchecked-box">Check after relay configuration <span class="zim-tag">@todo</span></li>
+</ul>
+<p>
+OPTIONALLY<br>
+Maximium message size:	&lt;message size&gt;<br>
+Hostname in greeting:	enabled<br>
+Sender's domain:	enabled
+</p>
+<br>
+<h4>POP3<a id="pop3" class="h_anchor"></a></h4>
+<p>
+Enable POP3 service:	disabled
+</p>
+<br>
+<h4>Advanced<a id="advanced" class="h_anchor"></a></h4>
+<p>
+Company identifier in puplic share prompts:	&lt;company name&gt;
+</p>
+<br>
+<h4>Proxy<a id="proxy" class="h_anchor"></a></h4>
+<p>
+Enable web proxy:	disabled
+</p>
+<br>
+<h3>Additional configuration<a id="additional-configuration" class="h_anchor"></a></h3>
+<br>
+<h4>Disable HTTP for web client<a id="disable-http-for-web-client" class="h_anchor"></a></h4>
+<p>
+<tt>zimbra$ zmtlsctl HTTPS</tt><br>
+<tt>zimbra$ zmmailboxdctl stop</tt><br>
+When mailboxd is stopped, type:<br>
+<tt>zimbra$ zmmailboxdctl start</tt>
+</p>
+<br>
+<h4>Change SMTP banner<a id="change-smtp-banner" class="h_anchor"></a></h4>
+<p>
+Check banner:<br>
+<tt>zimbra$ zmprov gcf zimbraMtaSmtpdBanner</tt><br>
+Default (8.8.15):  "$myhostname ESMTP $mail_name"<br>
+Change banner:<br>
+<tt>zimbra$ zmprov mcf zimbraMtaSmtpdBanner "&lt;External mail server FQDN&gt; ESMTP"</tt>
+</p>
+<br>
+<h2>Accounts<a id="accounts" class="h_anchor"></a></h2>
+<br>
+<h3>Admin<a id="admin" class="h_anchor"></a></h3>
+<p>
+OPTIONALLY <br>
+Forward all mails to user account with no local copy and a specific mail address to filter there.<br>
+<div style='padding-left: 30pt'>
+Forwarding
+</div>
+<div style='padding-left: 60pt'>
+Don't keep a local copy of messages:	enabled
+</div>
+</p>
+<br>
+<br>
+<h3>Custom<a id="custom" class="h_anchor"></a></h3>
+<p>
+Add additional administrative accounts.<br>
+Add user accounts.
+</p>
+<br>
+<h2>Misc<a id="misc" class="h_anchor"></a></h2>
+<br>
+<h3>Exclude squashfs snap mounts<a id="exclude-squashfs-snap-mounts" class="h_anchor"></a></h3>
+<p>
+See here <a href="../../../Ubuntu/Operation/Disable_Disk_Space_Monitoring_for_Loop_Devices.html#solution-2-exclude-directly-in-zmstat-df-executable-file" title="solution 2" class="page">solution 2</a>.
+</p>
+<br>
+<h3>Backup<a id="backup" class="h_anchor"></a></h3>
+<br>
+<h4>Zimbra local - Scripts<a id="zimbra-local---scripts" class="h_anchor"></a></h4>
+<p>
+Create directory hierarchy as <b>root</b>:<br>
+&lt;backup root&gt;<br>
+<div style='padding-left: 30pt'>
+/Archive<br>
+/Weekly<br>
+/tmp
+</div>
+Copy <b>zmbak.sh</b> to <b>/root/scripts</b>.<br>
+Install the following:<br>
+<tt># apt install dar</tt><br>
+<tt># apt install sharutils</tt><br>
+<tt># apt install bsd-mailx</tt><br>
+Optional:<br>
+<tt># apt install cifs-util</tt><br>
+or execute backup script with install option<br>
+<tt># zmbak.sh --INSTALL</tt>
+</p>
+<br>
+<p>
+Add the following to crontab:<br>
+<tt># crontab -e</tt>
+</p>
+<div class="zim-object">
+<pre><code class="ini"># Create FULL Zimbra backup on every monday at 01:00
+0 1 * * 1   /bin/bash /root/scripts/zmbak.sh  -f &gt; /var/log/zim_backup.log 2&gt;&amp;1
+
+# Create FULL Zimbra backup on every tuesday to sunday at 01:00
+0 1 * * 2-7 /bin/bash /root/scripts/zmbak.sh  -d &gt; /var/log/zim_backup.log 2&gt;&amp;1
+
+</code></pre>
+</div>
+<br>
+<br>
+<h4>UrBackup - Zimbra<a id="urbackup---zimbra" class="h_anchor"></a></h4>
+<p>
+See <a href="../../../UrBackup/Client/Installation/Linux.html" title="here" class="page">here</a>.
+</p>
+<br>
+
+	</div>
+
+	<br />
+
+	<div class='page-footer'>
+
+	</div>
+
+	
+
+</div>
+
+</body>
+</html>

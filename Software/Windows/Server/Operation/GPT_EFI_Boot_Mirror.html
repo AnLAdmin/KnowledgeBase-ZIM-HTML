@@ -1,0 +1,1958 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>GPT EFI Boot Mirror</title>
+	<meta name='Generator' content='Zim 0.75.2'>
+	<style type='text/css'>
+		a          { text-decoration: none }
+		a:hover    { text-decoration: underline }
+		a:active   { text-decoration: underline }
+		strike     { color: grey }
+		u          { text-decoration: none; background-color: yellow }
+		tt         { color: #2e3436; }
+		pre        { color: #2e3436; margin-left: 20px; margin-top: 0; margin-bottom: 0 }
+		h1         { text-decoration: underline; color: #4e9a06; margin: 0 }
+		h2         { color: #4e9a06; margin: 0 }
+		h3         { color: #4e9a06; margin: 0 }
+		h4         { color: #4e9a06; margin: 0 }
+		h5         { color: #4e9a06; margin: 0 }
+		p          { margin: 0 }
+		ul         { margin: 0 }
+		ol         { margin: 0 }
+		span.zim-tag {
+			color: #ce5c00;
+		}
+		div.zim-object {
+			border-style:solid;
+			border-width:1px;
+		}
+		.checked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8sMEGsKGkAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAEBUlEQVRIx62V22tdRRTGf7Nn73P2ybntnNOe3NqkPTGgLTVUUZF6QatSLOKTPgqCIqLgQ0H/A1sQQbBYCBb1QfAxiC8tSO1FqHkwJVKtjdTGNraUmObsc9nXmfGh7cGYpM1D5nHWzPetteZb3wg2eB2YqYm4zSadsMtoboiNBH/3TE0awx6j+MRoxoTg/IYRvP19TQrJS0bzhdHGSyKFkLTtjSKwMjyiEz43ynhtP6bdjBCWyFobAf7eT7VhNF/q1FRbjYjmUohlCVPwnB+6FUxMTJipqSmUUhhjEGKd3bMT4ks/Y6oLBK2Yth8hHYtCJXOix7Nf7xLMzc0xOzvLzp078TyPNE3viW3QJPXzhNWbxFFKHCmMhoLn/FHodd48vGfhapdAacXQlkFK5dL6wIUm6fuTZPuvqDQhaMUYYyiVyuQr6rXDexYuAdi3tSv1ZJNs/R/CaszzT+1na88uXFnCEnJVgivBNN8uTJKmHQI/ptOOcXNZzMz9mOqFs90OHpipWcYwlo5P4ebnuOkrvr5wgrH+h3im7y36MzuwRXYZeKha/OhP0EkadFoxQSdGSotedR/+XwMc2XvKdNUFOFqZx6LKZWIiwjgkikNmLp/hm8sH+K1zjFTHXfBYdTi+eJArzXM0GxFxoBDCopLvo/fqEwi1XPkWkGqjFo2TgB1jOYZUKZTS/D1/ncmLh7jon0IbRWoiTi59ymzzJEEQE3cStNZsGxqlfPE57MBbOR8fP3hDGalOO9fq2DlBvmZw8xa2IxACGn6TydlD/O6f5OzSV/zif0cYhLQaEXGkKBbz7Ov/AOlXV1cxgBJRI3fuSTrpTawt18kWIZN1CFuaONI0w0WOXfsI43YIggh/KUSlhqxrMz74AkOZcWBm9QkH+Gw8NDLuITi+m0yzhluSyJzBLcpblUhFxywSRAEtPwQjsKVN30CNh0uvYuOubSHLtN3J0TO1j0pmBNuFbFWRK0gyPRZpktL2I5JQkclKakNlnh54g6ocvevUr/Ai2a7wineEkcJupA3S1Wg0nVZM2E6wbEF5U5G9Q++wI7sfR7h3N8HVNstykBfzH+KJEZwiWD0aIwxCgJ0R1Mu7GXOeJSuK93bZtQIle4D9pUNU5DC5jEsu55AvZakM5NicGyEj8uuz8bUCQgj67QfY671P3vEoeC69gy695U1U7NG7XV0pUwBjDJa1/JJlWWxzHuflzQe5FJ/GsgUVuZ2t8lEkTvfc0aNHb72flBhjVicQQqCUuvM3/M+WDVguWBrMVdDXEGZlBVEUrVCU9d9s5+fnaTQa2PZyPxEIhJaI1EEoZwX4ncynp6fXrmB4eJjR0VFarRbNZnP9P9rt9gohqNVq1Ov1ZbF/AZGev3hLJ2/zAAAAAElFTkSuQmCC)}
+		.xchecked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8bDYnDxEwAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAEK0lEQVRIx9WVS2hTWRjHf/eR3CY1nbxMH2YiZRQS6qO13YlMVxY3SnVcuNIBFezGpSADLoQqLu1sHJCqdCFSXFpw4YOCSH3BtFqttTNamabX3DS5bfO6uffMoglja3RGcDMHzuac7/z/53++//cd+L8P6VuCPQYZ8ADNgBd4J31DcDcQs+GnHByRocEDv0kfBSjAOlYCs11Q+gpwDegS8LMJ+3QIK0ATzEhV8Odnz5bzw8P4dJ25aJQ/WlvJ1df/K7hSLtOcTNI+Pk69rpMTgqIQhCDvh1/VSpw79+gRrRMTmLZNezLJJsPg+a5dmOEwQlFqg1sWG16/Jv7sGWXDwBACFQjC9HcwIMONKkGp4PGAJGEDS0IQmZlhnWnye3c3eiyGo6qr3WHbrJ+dJf7gAXI6zSIr72T7/fgzmT4FHnTBsgrQBfYvTU0km5vxz86iADnAm0rRPTWFt7cXZccOJJcLAGHb2K9ekT93jmwmwwdAAFpjI6Ntbfxw5879ag7l6o1sr5eHHR3IsRgeQK/M4sQE+YEB7JcvEY6zAj45SWFgAPPxYwzHoQxIkQjTPT0kIxE+Noj8sexFn4/xnh58iQTeSpHkHAdrbIzi0BCOrmNPTpK/eJHM3bt8sCyKQCiR4NWePWSiUZw1+ZLXJm4pFKLhzBlCsRh2RUXacVgeGaF47RrL58+zcP8+RrmMkCQinZ1EL1zAjERqmkH+tLYl1G3bCJw4QUjT0IA0MJfLMX/5MqmHD0nZNiUgtGULG/r7ccXjINWuWbnmqsuFu7sb/4EDNLlcBIEioNs2KUAFGmMxmk6dQm1tRZI+3xBqEkiShBQOox05Ql1nJ26gvuIUAWiKQnj/ftStW5Fk+YuF+NldsbBA4cYN9KdPmaso8Fc62ZJtk7l1C2t0FGdxESHE1xE4hkHh6lX0oSHSpRIewC/LrPf7CSgKNpCamkI/fZr8pUuIZBIcpyaBunahPp1mub+fDyMjGKUSChCsq6Nh717q9u2jbnSU0uAgRrFIwTThyhUCqRS+hgZKLS1fJvDm87SNjZGcnsYUAjcQ8vsJ9/Xh7u1FDgRQN20iks3iDA+zZFmYhQLqzZtsj8WY3L0baY2Sf55ICCKpFHUzM2SEQAJCHg+hY8fQDh5EDgRWDoRC1J88SePRo2geD0XAcBy8b98Sv3ePYDZbbf2rFQjLIphMsmDbaEBQVQkePox26BCSz7e6i4bDrDt+nGYhmBscpFAskheC4Js3bPR4qHphFYEnlcI7P4/jdqNpGu8TCe4oCsXr1z//F2ga3+/cSfTJE0qmSVYIsKzaOZDcbjKyzFIiwfvt21kMBLA07YsetzWNd+3tLLW0sH5igvT8PH9Go/z44kX+E4LGjg7GDYOcy4XlOEgLC//5P/5LCFzxOPLmzWyIx+m6fduu7v0NVGqyTSycKksAAAAASUVORK5CYII=)}
+		.unchecked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8qAt8h3m8AAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAA60lEQVRIx+2VsQqDMBRF70sCLg5OLoKgjk7+lJ/hh+STXBwcnRz8ArMEkrxOFktbaC3tULzTg5e8k5vADXDq70VbobXmvu/hvQczg4heHrJfXxQFuq67blZbMc8zpmlCXddIkgTOuZcBUko45zCOI6y1Nz2xFSEEZFmGOI7fGg4A3nsQEZqmuXOu9jallACAtm3fvmutNaIoAjM/dkBECCF89KCbk4eAb+kEnIAT8EsAM0OIz3hSyrssUvss8t5fg+uIrLXPs0gIgWVZYIyBUurQyYdheO4gz3NUVQVjDNZ1PfSjpWmKsixvehfB9GBZ3NndrgAAAABJRU5ErkJggg==)}
+		.migrated-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB+AKHREFA8vJSnkAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAC1klEQVRIx+2VT0hUURTGf/e958w4Tc3TYowMw1GyEgwr1MqsFmbZIrIWQZsWJUjbdoHQpl3Qps0swnCRECQFYkR/TC1iKkqmfzAKTo2Vf8hoRsfR995tkRMT87RRWkUHHhy495zvnvvu933wP/75EKkkEAjIYDCIaZpIKRFCZN0kfX9xcTGtra2/irVUEolECIfDlJeXo+s6hmFkDaCqKoZhEAqFSCaTv60pqcSyLAoLC/F4PEtqDmCaJkIIKisrMybX0sdUVRWA5ubmPzdNjjI1cpXkZC/O1fV03PXgdDqRUtpPIITAsqxsDz0Z/3CZQv8uqo4N4C8/Tp2/DdM0MiZQlvk41OTkI/LW1SGtCVb5drD3eCc71wcA+VcAHA5vDd8+3UGakxiJV7i9pdQevU5T1R35pJ3MV5QW1pf+0kWBheJ2SWua8EQXZXsu4fVVYEz1sEKvof5EuxjoPvzpcRvrdp9C2gGMx6cpOHBmbImMesds7BZubwMVDTfXDnQ3vQfK7AC8wLfExMX5whyQc3q2OEnjGm5vE76SQxsfBLr77a7CNf+n0r/l6sSMtsBSnurckiIILCobAtVZhpF4gZF4jubaymj4Ch/fd380LE7bAnjc0NPxk2yqpmEuwGxF0ag+0k5uTpzZeBeaazvj0We8fXojainsb2xh2BZgbe0gSIllzSIUh63wfQ6dZ/O2fbjcKlOj58jJ3cVENESw5yErc9nf2MLQ4jwQAkV1Lqiq37/cZ9WaahJjF9AcmxiPDhLs7ePe23oOnmUwg2hSShQle96tKDjA2HAniusgo9FxnvY9Jxw7RWzGYy92QghM00x5g53qp9sHmtB58/o2umOI2NwGolMnMYUHIb7aAyiKwsjICLqu2/qBEIKUUAohMaSHSLyBSMoPTINQ6CX5+fn2AEVFRZSUlBCPx4nFYhl3L4RESjF/GEgX3pSj+Xw+/H7/b3U/AEOZFnp7O5+5AAAAAElFTkSuQmCC)}
+		ul {list-style-image: none}
+		/* ul rule needed to reset style for sub-bullets */
+
+		span.insen { color: grey                }
+
+		.pages {
+			max-width: 1000px;
+			 padding-left: 320px;
+		}
+		.menu{
+			float:left; width: 300px;
+		}
+		hr{clear:both;}
+	</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class='header'>
+	[ <a href='../Operation.html'>Prev</a> ]
+
+	[ <a href='../../../../index.html'>Index</a> ]
+
+	[ <a href='../Roles.html'>Next</a> ]
+</div>
+
+<hr />
+
+<div class="menu">
+<ul>
+<li><a href="../../../../Concepts.html" title="Concepts" class="page">Concepts</a></li>
+<li><a href="../../../../Glossary.html" title="Glossary" class="page">Glossary</a></li>
+<li><a href="../../../../Hardware.html" title="Hardware" class="page">Hardware</a></li>
+<li><a href="../../../../Services.html" title="Services" class="page">Services</a></li>
+<li><a href="../../../../Software.html" title="Software" class="page">Software</a>
+<ul>
+<li><a href="../../../acme.sh.html" title="acme.sh" class="page">acme.sh</a></li>
+<li><a href="../../../Ansible.html" title="Ansible" class="page">Ansible</a></li>
+<li><a href="../../../APC_PowerChute_Network_Shutdown.html" title="APC PowerChute Network Shutdown" class="page">APC PowerChute Network Shutdown</a></li>
+<li><a href="../../../apcupsd.html" title="apcupsd" class="page">apcupsd</a></li>
+<li><a href="../../../apt.html" title="apt" class="page">apt</a></li>
+<li><a href="../../../ar.html" title="ar" class="page">ar</a></li>
+<li><a href="../../../AROS.html" title="AROS" class="page">AROS</a></li>
+<li><a href="../../../awk.html" title="awk" class="page">awk</a></li>
+<li><a href="../../../Bash.html" title="Bash" class="page">Bash</a></li>
+<li><a href="../../../Buildah.html" title="Buildah" class="page">Buildah</a></li>
+<li><a href="../../../dd.html" title="dd" class="page">dd</a></li>
+<li><a href="../../../ddclient.html" title="ddclient" class="page">ddclient</a></li>
+<li><a href="../../../debconf.html" title="debconf" class="page">debconf</a></li>
+<li><a href="../../../Debian.html" title="Debian" class="page">Debian</a></li>
+<li><a href="../../../DiskShadow.html" title="DiskShadow" class="page">DiskShadow</a></li>
+<li><a href="../../../dnsmasq.html" title="dnsmasq" class="page">dnsmasq</a></li>
+<li><a href="../../../Docker.html" title="Docker" class="page">Docker</a></li>
+<li><a href="../../../Doskey.html" title="Doskey" class="page">Doskey</a></li>
+<li><a href="../../../findmnt.html" title="findmnt" class="page">findmnt</a></li>
+<li><a href="../../../Firefox.html" title="Firefox" class="page">Firefox</a></li>
+<li><a href="../../../fuse-overlayfs.html" title="fuse-overlayfs" class="page">fuse-overlayfs</a></li>
+<li><a href="../../../Git.html" title="Git" class="page">Git</a></li>
+<li><a href="../../../Gitea.html" title="Gitea" class="page">Gitea</a></li>
+<li><a href="../../../GnuCash.html" title="GnuCash" class="page">GnuCash</a></li>
+<li><a href="../../../Google_Backup_and_Sync.html" title="Google Backup and Sync" class="page">Google Backup and Sync</a></li>
+<li><a href="../../../Google_Drive.html" title="Google Drive" class="page">Google Drive</a></li>
+<li><a href="../../../grep.html" title="grep" class="page">grep</a></li>
+<li><a href="../../../grub-btrfs.html" title="grub-btrfs" class="page">grub-btrfs</a></li>
+<li><a href="../../../host.html" title="host" class="page">host</a></li>
+<li><a href="../../../iftop.html" title="iftop" class="page">iftop</a></li>
+<li><a href="../../../incron.html" title="incron" class="page">incron</a></li>
+<li><a href="../../../Javascript.html" title="Javascript" class="page">Javascript</a></li>
+<li><a href="../../../less.html" title="less" class="page">less</a></li>
+<li><a href="../../../Linux.html" title="Linux" class="page">Linux</a></li>
+<li><a href="../../../lsof.html" title="lsof" class="page">lsof</a></li>
+<li><a href="../../../Lxd.html" title="Lxd" class="page">Lxd</a></li>
+<li><a href="../../../Micro.html" title="Micro" class="page">Micro</a></li>
+<li><a href="../../../Midnight_Commander.html" title="Midnight Commander" class="page">Midnight Commander</a></li>
+<li><a href="../../../MS_Office.html" title="MS Office" class="page">MS Office</a></li>
+<li><a href="../../../MSYS2.html" title="MSYS2" class="page">MSYS2</a></li>
+<li><a href="../../../newgrp.html" title="newgrp" class="page">newgrp</a></li>
+<li><a href="../../../Nextcloud.html" title="Nextcloud" class="page">Nextcloud</a></li>
+<li><a href="../../../NGINX.html" title="NGINX" class="page">NGINX</a></li>
+<li><a href="../../../NixOS.html" title="NixOS" class="page">NixOS</a></li>
+<li><a href="../../../Node-RED.html" title="Node-RED" class="page">Node-RED</a></li>
+<li><a href="../../../NPM.html" title="NPM" class="page">NPM</a></li>
+<li><a href="../../../OpenSSL.html" title="OpenSSL" class="page">OpenSSL</a></li>
+<li><a href="../../../Partclone.html" title="Partclone" class="page">Partclone</a></li>
+<li><a href="../../../Podman.html" title="Podman" class="page">Podman</a></li>
+<li><a href="../../../Postfix.html" title="Postfix" class="page">Postfix</a></li>
+<li><a href="../../../PostgreSQL.html" title="PostgreSQL" class="page">PostgreSQL</a></li>
+<li><a href="../../../pyCharm.html" title="pyCharm" class="page">pyCharm</a></li>
+<li><a href="../../../Python.html" title="Python" class="page">Python</a></li>
+<li><a href="../../../Redis.html" title="Redis" class="page">Redis</a></li>
+<li><a href="../../../Rust.html" title="Rust" class="page">Rust</a></li>
+<li><a href="../../../Snapper.html" title="Snapper" class="page">Snapper</a></li>
+<li><a href="../../../SSH.html" title="SSH" class="page">SSH</a></li>
+<li><a href="../../../stat.html" title="stat" class="page">stat</a></li>
+<li><a href="../../../Systemd.html" title="Systemd" class="page">Systemd</a></li>
+<li><a href="../../../TortoiseHG_(Mercurail_SCM).html" title="TortoiseHG (Mercurail SCM)" class="page">TortoiseHG (Mercurail SCM)</a></li>
+<li><a href="../../../Traefik.html" title="Traefik" class="page">Traefik</a></li>
+<li><a href="../../../Ubuntu.html" title="Ubuntu" class="page">Ubuntu</a></li>
+<li><a href="../../../UFW.html" title="UFW" class="page">UFW</a></li>
+<li><a href="../../../update-alternatives.html" title="update-alternatives" class="page">update-alternatives</a></li>
+<li><a href="../../../Uptime_Kuma.html" title="Uptime Kuma" class="page">Uptime Kuma</a></li>
+<li><a href="../../../UrBackup.html" title="UrBackup" class="page">UrBackup</a></li>
+<li><a href="../../../Visual_Studio_Code.html" title="Visual Studio Code" class="page">Visual Studio Code</a></li>
+<li><a href="../../../Vssadmin.html" title="Vssadmin" class="page">Vssadmin</a></li>
+<li><a href="../../../w.html" title="w" class="page">w</a></li>
+<li><a href="../../../wc.html" title="wc" class="page">wc</a></li>
+<li><a href="../../../whereis.html" title="whereis" class="page">whereis</a></li>
+<li><a href="../../../which.html" title="which" class="page">which</a></li>
+<li><a href="../../../Windows.html" title="Windows" class="page">Windows</a>
+<ul>
+<li><a href="../../Backup.html" title="Backup" class="page">Backup</a></li>
+<li><a href="../../Client.html" title="Client" class="page">Client</a></li>
+<li><a href="../../Command_line.html" title="Command line" class="page">Command line</a></li>
+<li><a href="../../Features.html" title="Features" class="page">Features</a></li>
+<li><a href="../../Group_Policy.html" title="Group Policy" class="page">Group Policy</a></li>
+<li><a href="../../Installation.html" title="Installation" class="page">Installation</a></li>
+<li><a href="../../Server.html" title="Server" class="page">Server</a>
+<ul>
+<li><a href="../Features.html" title="Features" class="page">Features</a></li>
+<li><a href="../Operation.html" title="Operation" class="page">Operation</a>
+<ul>
+<li><b>GPT EFI Boot Mirror</b></li>
+</ul></li>
+<li><a href="../Roles.html" title="Roles" class="page">Roles</a></li>
+</ul></li>
+<li><a href="../../Services.html" title="Services" class="page">Services</a></li>
+<li><a href="../../Storage_Management.html" title="Storage Management" class="page">Storage Management</a></li>
+<li><a href="../../Tools.html" title="Tools" class="page">Tools</a></li>
+</ul></li>
+<li><a href="../../../winget.html" title="winget" class="page">winget</a></li>
+<li><a href="../../../Zimbra.html" title="Zimbra" class="page">Zimbra</a></li>
+<li><a href="../../../ZIM-Desktop.html" title="ZIM-Desktop" class="page">ZIM-Desktop</a></li>
+</ul></li>
+</ul>
+
+</div>
+
+<!-- Wiki content -->
+
+<div class='pages'>
+	<div class='heading'>
+	<h1>GPT EFI Boot Mirror <a name='Software:Windows:Server:Operation:GPT EFI Boot Mirror'></a></h1>
+	</div>
+
+	<div class='content'>
+	<p>
+Created Freitag 19 April 2024
+</p>
+<br>
+<p>
+(<a href="https://learn.microsoft.com/en-us/troubleshoot/windows-server/backup-and-storage/establish-boot-to-gpt-mirrors" title="Src" class="https">Src</a>)
+</p>
+<br>
+<p>
+Establish and boot to GPT mirrors in 64-bit Windows
+</p>
+<br>
+<p>
+<div style='padding-left: 30pt'>
+Article<br>
+12/26/2023
+</div>
+</p>
+<br>
+<p>
+In this article
+</p>
+<br>
+<p>
+<div style='padding-left: 30pt'>
+Summary<br>
+Prepare the shadow drive for mirroring<br>
+Convert the primary and shadow drives to Dynamic<br>
+Use Bootcfg.exe to add new EFI partition boot entries to NVRAM
+</div>
+</p>
+<br>
+<p>
+This article describes how to successfully set up dynamic boot partition mirroring on GUID Partition Table (GPT) disks.
+</p>
+<br>
+<p>
+Applies to:   Windows Server 2012 R2<br>
+Original KB number:   814070<br>
+Summary
+</p>
+<br>
+<p>
+Unlike Master Boot Record (MBR) mirrors in 32-bit Windows, there are more steps to successfully create and boot to mirrored boot volumes on GPT disks. This article also describes how to recover after a primary disk failure if the shadow disk did not already have an EFI partition established. The disk must have an EFI partition to boot.
+</p>
+<br>
+<p>
+You must have the built-in Diskpart.exe and Bootcfg.exe utilities to create bootable mirror volumes on GPT disks. You can do some of these steps with the Disk Management console, but others you can do only with the built-in Diskpart.exe utility.
+</p>
+<br>
+<p>
+For consistency and ease of use, this article uses the Diskpart.exe utility to perform the steps. For help with any Diskpart.exe commands, start Diskmgmt.msc, and then open the help topics on the Help menu.
+</p>
+<br>
+<p>
+The steps are performed with real examples. The steps show the expected results returned from each command. Disk 0 is the primary system and boot drive. Disk 1 is the shadow drive.<br>
+Prepare the shadow drive for mirroring
+</p>
+<br>
+<p>
+Before you set up boot volume mirroring, it is a good idea have another GPT disk in the computer that contains an Extensible Firmware Interface (EFI) partition. The EFI partition contains the system files used to boot the operating system. If the primary system drive (disk-0) fails, you can use the EFI partition on the shadow drive (disk-1) to boot. This step creates and prepares new EFI and Microsoft Reserved (MSR) partitions on the shadow drive. You can use only the Diskpart.exe utility to create the required EFI and MSR partitions. You cannot use the Disk Management console to create or mirror EFI or MSR partitions.
+</p>
+<br>
+<p>
+Before you start, make sure that you have another BASIC disk with all unallocated free space of equal or greater capacity than the primary disks system and boot partitions. If you already converted the spare drive to dynamic, revert it back to basic before you follow these steps.
+</p>
+<br>
+<p>
+<div style='padding-left: 30pt'>
+At a command prompt, run the Diskpart.exe utility.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 30pt'>
+This starts the diskpart console. After it is initialized, DISKPART&gt; is displayed. It waits for your input commands.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 30pt'>
+Select the disk that you want to be the shadow drive, and then convert the drive to GPT. In this example, disk 1 is used for the mirror (shadow) drive.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 30pt'>
+Note
+</div>
+<div style='padding-left: 60pt'>
+The disk that you select must not contain any data partitions and must be a raw basic disk with only unallocated space of equal or greater capacity than the primary system disk.<br>
+The following are the commands that you type at the command prompt.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+DISKPART&gt; Select disk 1
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Disk 1 is now the selected disk.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+DISKPART&gt; Convert GPT
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Diskpart successfully converted the selected disk to GPT format.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+DISKPART&gt; List partition
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Partition ### Type Size Offset
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Partition 1 Reserved 32 MB 17 KB
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+Note
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+If you show more than one partition at this point, you have either selected the wrong drive, or you did not start with a raw drive. Correct this before you continue, or data loss may occur.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 30pt'>
+Select partition 1 on disk 1, then delete it - you must use the override command to delete the Microsoft Reserved (MSR) partition. You will re-create a new MSR partition after you create the required EFI partition.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+DISKPART&gt; Select partition 1
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Partition 1 is now the selected partition.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+DISKPART&gt; Delete partition override
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Diskpart successfully deleted the selected partition.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 30pt'>
+Select disk-0, and then list the partitions on disk-0. With the output of the list command, create new EFI and MSR partitions on disk 1 that are the same sizes as those on disk 0.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+DISKPART&gt; Select disk 0
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Disk 0 is now the selected disk.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+DISKPART&gt; List partition
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Partition ### Type Size Offset
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Partition 1 System 204 MB 32 KB &lt;---- EFI PARTITION<br>
+Partition 2 Primary 4996 MB 204 MB<br>
+Partition 3 Reserved 32 MB 9 GB &lt;---- MSR PARTITION
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+DISKPART&gt; select disk 1
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Disk 1 is now the selected disk.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+DISKPART&gt; create partition efi size=204
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Diskpart succeeded in creating the specified partition.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+DISKPART&gt; create partition msr size=32
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Diskpart succeeded in creating the specified partition.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+DISKPART&gt; list partition
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Partition ### Type Size Offset
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Partition 1 System 204 MB 17 KB &lt;---- NEW EFI PARTITION ON SHADOW<br>
+*Partition 2 Reserved 32 MB 204 MB &lt;---- NEW MSR PARTITION ON SHADOW
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 30pt'>
+Select the EFI partition on the shadow drive, and then assign a letter to the EFI partition so it can be formatted. In this example, the drive letter S is assigned to the shadow EFI partition. You can use any available drive letter for this step.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+DISKPART&gt; Select disk 1
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Disk 1 is now the selected disk.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+DISKPART&gt; Select partition 1
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Partition 1 is now the selected partition.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+DISKPART&gt; Assign letter=S
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Diskpart successfully assigned the drive letter or mount point.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 30pt'>
+Open a new command prompt, and then use the format utility to format the EFI partition (S:) with the FAT file system. You must do this so that you can copy the system files from the primary EFI partition to this new EFI partition. Do not format with NTFS. The system cannot boot from an EFI partition unless it is formatted with the FAT file system.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+C:\&gt; format s: /fs:fat /q /y
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+The type of the file system is RAW.<br>
+The new file system is FAT.<br>
+QuickFormatting 204M<br>
+Initializing the File Allocation Table (FAT)...<br>
+Format complete.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+213,680,128 bytes total disk space.<br>
+213,680,128 bytes available on disk.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+4,096 bytes in each allocation unit.<br>
+52,168 allocation units available on disk.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+16 bits in each FAT entry.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Volume Serial Number is EA34-03C7
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 30pt'>
+Press ALT+TAB to return to the diskpart command window. Select the EFI partition on the primary drive (disk-0), and then assign a drive letter to that EFI partition. In this example, the drive letter P is assigned to the primary EFI partition on disk-0. You can use any available drive letter for this step.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+DISKPART&gt; Select disk 0
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Disk 0 is now the selected disk.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+DISKPART&gt; Select partition 1
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Partition 1 is now the selected partition.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+DISKPART&gt; Assign letter=P
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Diskpart successfully assigned the drive letter or mount point.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 30pt'>
+Press ALT+TAB again to return to the other command prompt. Use the xcopy command to copy the system files from the primary EFI partition (P:) to the Shadow EFI partition (S:). You must do this to make sure that the shadow drive can boot the system if disk-0 fails. Make sure that you use the correct drive letters if you used different letters for your EFI partitions.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+C:\&gt; xcopy p:\*.* s: /s /h
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+p:\EFI\Microsoft\WINNT50\Boot0003<br>
+p:\EFI\Microsoft\WINNT50\ia64ldr.efi
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+p:\EFI\Microsoft\EFIDrivers\fpswa.efi<br>
+p:\MSUtil\diskpart.efi
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+p:\MSUtil\fdisk.efi<br>
+p:\MSUtil\format.efi<br>
+p:\MSUtil\nvrboot.efi
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+7 File(s) copied
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 30pt'>
+Remove the drive letters assigned to both EFI partitions. This step is optional, because after a reboot they will not be re-assigned.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+DISKPART&gt; Select volume P
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Volume P is the selected volume.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+DISKPART&gt; Remove
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Diskpart successfully removed the drive letter or mount point.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+Repeat the steps for the S volume.
+</div>
+</p>
+<br>
+<p>
+Convert the primary and shadow drives to Dynamic
+</p>
+<br>
+<p>
+Before you can establish a mirror, both the primary (source) drive (Disk-0) and the shadow (destination) drive (Disk-1) must be converted to Dynamic. After the disks are Dynamic (after a reboot), you can then establish the mirror. You can do this step with either the Disk Management console or the Diskpart.exe utility.
+</p>
+<br>
+<p>
+<div style='padding-left: 30pt'>
+With Diskpart.exe, select the disk that you want to convert to dynamic, and then convert it to dynamic. Perform this on both the shadow and primary GPT disks. Start with the shadow disk.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+DISKPART&gt; Select disk 1
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Disk 1 is now the selected disk
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+DISKPART&gt; Convert dynamic
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Diskpart successfully converted the selected disk to Dynamic format.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+DISKPART&gt; Select disk 0
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Disk 0 is now the selected disk
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+DISKPART&gt; Convert dynamic
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+You must reboot your computer to complete this operation.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+DISKPART&gt; Exit
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Leaving Diskpart...
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 30pt'>
+Shut down and restart your computer to complete the conversion of the system drive (disk-0) to dynamic. This may require two reboots.
+</div>
+</p>
+<br>
+<p>
+Establish a mirror from the boot drive to the shadow drive
+</p>
+<br>
+<p>
+After both the primary (disk-0) and shadow (disk-1) drives are dynamic, you can then establish the mirror of the boot volume to the shadow drive. You can do this step with either the Disk management console or the Diskpart.exe utility.
+</p>
+<br>
+<p>
+<div style='padding-left: 30pt'>
+With Diskpart.exe, select the boot volume (C:), and then mirror the volume to the shadow disk (disk-1).
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+DISKPART&gt; Select volume C
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Volume 1 is the selected volume.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+DISKPART&gt; add disk=1
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Diskpart succeeded in adding a mirror to the volume.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 30pt'>
+Wait for the volume synchronization to complete, and then quit Diskpart.
+</div>
+</p>
+<br>
+<p>
+Use Bootcfg.exe to add new EFI partition boot entries to NVRAM
+</p>
+<br>
+<p>
+Now that you have successfully established the boot mirror, a new boot entry was automatically added to NVRAM so that you can boot to the shadow drive. This new entry is displayed as Boot Mirror C: - secondary plex on the boot menu. If you select it, it will boot into the operating system on the shadow drive. However, if something were to happen to any of the system files or the EFI partition itself on disk-0 or if disk-0 failed completely, you would have to boot from the EFI partition on disk-1. Before this will work, you have to add boot entries into NVRAM with the Bootcfg.exe utility.
+</p>
+<br>
+<p>
+<div style='padding-left: 30pt'>
+At a command prompt, run the Bootcfg.exe utility to display the current boot entries. You have one boot entry for the main operating system (boot entry id:1), and one boot entry for the Mirror (shadow) drive (boot entry id:5).
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+C:&gt; bootcfg
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Boot Options
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Timeout: 30<br>
+Default: \Device\HarddiskDmVolumes\PhysicalDmVolumes\BlockVolume1\WINDO<br>
+CurrentBootEntryID: 5
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Boot Entries
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Boot entry ID: 1<br>
+OS Friendly Name: Windows 2003 Server, Enterprise OsLoadOptions: N/A<br>
+BootFilePath: \Device\HarddiskVolume1\EFI\Microsoft\WINNT50\ia64ldr.efi<br>
+OsFilePath: \Device\HarddiskDmVolumes\PhysicalDmVolumes\BlockVolume1\WINDOWS
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Boot entry ID: 2<br>
+OS Friendly Name: LS120
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Boot entry ID: 3<br>
+OS Friendly Name: CDROM
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Boot entry ID: 4<br>
+OS Friendly Name: EFI Shell
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Boot entry ID: 5<br>
+OS Friendly Name: Boot Mirror C: - secondary plex<br>
+OsLoadOptions: N/A<br>
+BootFilePath: \Device\HarddiskVolume1\EFI\Microsoft\WINNT50\ia64ldr.efi<br>
+OsFilePath: \Device\HarddiskDmVolumes\PhysicalDmVolumes\BlockVolume1\WINDOWS
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 30pt'>
+Before you can add the new entries for the EFI partition and boot partition on the shadow drive to NVRAM, you have to list the existing partitions on disk-0 so that you can extract partition GUID information about the current EFI partition. Use the bootcfg /list command against disk-0 to display all the partitions:
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+C:\&gt; bootcfg /list 0
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Partition table info for Disk: 0
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Partition No: 1<br>
+Partition Style: GPT<br>
+Starting offset: 32,256<br>
+Partition length: 213,825,024<br>
+Partition GUID: {68d298c0-1b6a-01c1-507b-9e5f8078f531}<br>
+GUID type: {c12a7328-f81f-11d2-ba4b-00a0c93ec93b}<br>
+Partition name: EFI system partition
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Partition No: 2<br>
+Partition Style: GPT<br>
+Starting offset: 213,857,280<br>
+Partition length: 5,142,056,960<br>
+Partition GUID: {68d298c0-1b6a-01c1-f1b3-12714f758821}<br>
+GUID type: {af9b60a0-1431-4f62-bc68-3311714a69ad}<br>
+Partition name: LDM data partition
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Partition No: 3<br>
+Partition Style: GPT<br>
+Starting offset: 9,153,031,680<br>
+Partition length: 1,048,576<br>
+Partition GUID: {73e47280-0d38-11d7-b47f-806e6f6e6963}<br>
+GUID type: {5808c8aa-7e8f-42e0-85d2-e1e90434cfb3}<br>
+Partition name: LDM metadata partition
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Partition No: 4<br>
+Partition Style: GPT<br>
+Starting offset: 9,154,080,256<br>
+Partition length: 32,505,856<br>
+Partition GUID: {1ca4672d-a37c-4e12-bacb-c5ae97924965}<br>
+GUID type: {e3c9e316-0b5c-4db8-817d-f92df00215ae}<br>
+Partition name: Microsoft reserved partition
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+Make a note of the EFI partition GUID. {______<u>----</u>__________} This will be used as the SOURCE GUID in a later command.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+In this example, the value is {68d298c0-1b6a-01c1-507b-9e5f8078f531} and will be used in a later command.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 30pt'>
+Use the bootcfg /list command against disk-1 to display all of its partitions:
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+C:\&gt; bootcfg /list 1
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Partition table info for Disk: 1
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Partition No: 1<br>
+Partition Style: GPT<br>
+Starting offset: 17,408<br>
+Partition length: 213,909,504<br>
+Partition GUID: {476688c5-8ebf-47d2-80e7-cf9d065edb81}<br>
+GUID type: {c12a7328-f81f-11d2-ba4b-00a0c93ec93b}<br>
+Partition name: EFI system partition
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Partition No: 2<br>
+Partition Style: GPT<br>
+Starting offset: 213,926,912<br>
+Partition length: 1,048,576<br>
+Partition GUID: {b72d10f6-e94e-4a4d-bb8e-4da985cc1679}<br>
+GUID type: {5808c8aa-7e8f-42e0-85d2-e1e90434cfb3}<br>
+Partition name: LDM metadata partition
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Partition No: 3<br>
+Partition Style: GPT<br>
+Starting offset: 214,975,488<br>
+Partition length: 32,505,856<br>
+Partition GUID: {824858f3-b8d5-4b4d-a3c7-18aac4442b7e}<br>
+GUID type: {e3c9e316-0b5c-4db8-817d-f92df00215ae}<br>
+Partition name: Microsoft reserved partition
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Partition No: 4<br>
+Partition Style: GPT<br>
+Starting offset: 247,481,344<br>
+Partition length: 5,142,056,960<br>
+Partition GUID: {f3d11286-2582-4d76-889c-b82c346be44e}<br>
+GUID type: {af9b60a0-1431-4f62-bc68-3311714a69ad}<br>
+Partition name: LDM data partition
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+Make a note of the EFI partition GUID. {______<u>----</u>__________} This will be used as the TARGET GUID in a later command.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+In this example, the value is {476688c5-8ebf-47d2-80e7-cf9d065edb81} and will be used in a later command.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 30pt'>
+Now you have the SOURCE and TARGET EFI GUID values that you have to clone the boot entries in NVRAM. The new entries use the new EFI partition GUID on the shadow drive to boot the system if disk-0 fails in any way. Use the bootcfg /clone command to add new NVRAM boot entries with your source and target GUID values recorded in steps 2 and 3.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+C:&gt;bootcfg /clone /sg {68d298c0-1b6a-01c1-507b-9e5f8078f531} /tg {476688c5-8ebf-47d2-80e7-cf9d06 5edb81} /d+ Cloned_Entry
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+INFO: Boot entry whose id is '1' successfully cloned.<br>
+INFO: Boot entry whose id is '5' successfully cloned.<br>
+SUCCESS: The operation completed successfully.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 30pt'>
+To see the new Cloned entries added to NVRAM, use the bootcfg command and notice you now have seven entries instead of five. The bottom two entries are the cloned entries and will use the EFI partition on the shadow drive (disk-1) to boot.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+C:\&gt;bootcfg
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Boot Options
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Timeout: 30<br>
+Default: \Device\HarddiskDmVolumes\PhysicalDmVolumes\BlockVolume1\WINDOWS<br>
+CurrentBootEntryID: 5
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Boot Entries
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Boot entry ID: 1<br>
+OS Friendly Name: Windows 2003 Server, Enterprise<br>
+OsLoadOptions: N/A<br>
+BootFilePath: \Device\HarddiskVolume1\EFI\Microsoft\WINNT50\ia64ldr.efi<br>
+OsFilePath: \Device\HarddiskDmVolumes\PhysicalDmVolumes\BlockVolume1\WINDOWS
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Boot entry ID: 2<br>
+OS Friendly Name: LS120
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Boot entry ID: 3<br>
+OS Friendly Name: CDROM
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Boot entry ID: 4<br>
+OS Friendly Name: EFI Shell
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Boot entry ID: 5<br>
+OS Friendly Name: Boot Mirror C: - secondary plex<br>
+OsLoadOptions: N/A<br>
+BootFilePath: \Device\HarddiskVolume1\EFI\Microsoft\WINNT50\ia64ldr.efi<br>
+OsFilePath: \Device\HarddiskDmVolumes\PhysicalDmVolumes\BlockVolume1\WINDOWS
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Boot entry ID: 6<br>
+OS Friendly Name: Windows 2003 Server, Enterprise Cloned_Entry<br>
+OsLoadOptions: N/A<br>
+BootFilePath: \Device\HarddiskVolume3\EFI\Microsoft\WINNT50\ia64ldr.efi<br>
+OsFilePath: \Device\HarddiskDmVolumes\PhysicalDmVolumes\BlockVolume1\WINDOWS
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Boot entry ID: 7<br>
+OS Friendly Name: Boot Mirror C: - secondary plex Cloned_Entry<br>
+OsLoadOptions: N/A<br>
+BootFilePath: \Device\HarddiskVolume3\EFI\Microsoft\WINNT50\ia64ldr.efi<br>
+OsFilePath: \Device\HarddiskDmVolumes\PhysicalDmVolumes\BlockVolume1\WINDOWS
+</div>
+</p>
+<br>
+<p>
+Test-boot the shadow drive with the new boot entries
+</p>
+<br>
+<p>
+After you have created the new boot entries in NVRAM, test the entries to make sure that the system can boot to the shadow drive if disk-0 fails.
+</p>
+<br>
+<p>
+<div style='padding-left: 30pt'>
+Perform a graceful shutdown and restart of Windows.<br>
+On the boot menu, select the boot entry named Boot Mirror C: - secondary plex Cloned_Entry to boot to the shadow drive. The EFI partition on the shadow drive will be used to boot the Windows operating system. Although you do not have to, you can also turn off the computer, remove disk-0, and then redo the test to make sure that the system will be bootable if the original system disk really fails and is removed.
+</div>
+</p>
+<br>
+<p>
+Recover a shadow boot drive with missing or damaged EFI partition
+</p>
+<br>
+<p>
+If the original Windows operating system was software mirrored to a Dynamic GPT disk that did not contain an EFI partition, or the EFI partition becomes damaged, or if the primary system disk (disk-0) fails, you may receive the following error message when you try to boot to the shadow disk:
+</p>
+<br>
+<p>
+<div style='padding-left: 30pt'>
+LOADING.: Boot Mirror C: - Secondary plex
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 30pt'>
+Load of Boot Mirror c: - secondary plex failed: Not Found
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 30pt'>
+Paused - press any key to continue.
+</div>
+</p>
+<br>
+<p>
+You must now use the following procedure to recover the original operating system (shadow) drive. These following steps show you the whole process. The process includes replacing the failed disk-0, re-installing Windows on the new replacement disk, which creates a new EFI system partition, and then adding new boot entries into NVRAM so that you can boot back into the original operating system on the shadow disk-1.
+</p>
+<br>
+<p>
+<div style='padding-left: 30pt'>
+Remove the failed system drive (disk-0) and replace it with a good disk. See your hardware manuals for the correct way to replace the failed disk. The replacement disk does not have to be partitioned or formatted. It can be a brand new disk.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 30pt'>
+Insert the Windows 2003 Server installation CD into the computer's CD-ROM drive, then power on the system.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 30pt'>
+When the system boot options menu is displayed, select to boot from CD-ROM. When you are prompted to press any key to boot from the CD, press any key.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 30pt'>
+This starts Windows 2003 Server setup.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 30pt'>
+On the Welcome to Windows Setup screen, press ENTER to install and allow Setup to automatically create the new system partition.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 30pt'>
+You must do this to boot and allow Setup to continue.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 30pt'>
+After the new EFI and MSR partitions are created, select the free space on disk-0 and create a new partition large enough to install Windows and hold a page file.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 30pt'>
+Select the newly created partition to install Windows on, and then select the format option that you want to format the partition. Setup continues. Answer all appropriate questions that you are prompted with, and then let Setup finish.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 30pt'>
+After Setup is complete, log on the console as Administrator.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 30pt'>
+At a command prompt, run the bootcfg command to display the current boot menu items from NVRAM.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+C:\&gt;bootcfg
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Boot Options
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Timeout: 5 Default: \Device\HarddiskVolume3\WINDOWS CurrentBootEntryID: 1
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Boot Entries
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Boot entry ID: 1<br>
+OS Friendly Name: Microsoft Windows Server 2003, Enterprise Edition<br>
+OsLoadOptions: N/A<br>
+BootFilePath: \Device\HarddiskVolume1\EFI\Microsoft\WINNT50\ia64ldr.efi<br>
+OsFilePath: \Device\HarddiskVolume3\WINDOWS
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Boot entry ID: 2<br>
+OS Friendly Name: Windows Server 2003, Enterprise Edition<br>
+OsLoadOptions: N/A<br>
+BootFilePath: (null)<br>
+OsFilePath: (null)
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Boot entry ID: 3<br>
+OS Friendly Name: LS120
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Boot entry ID: 4<br>
+OS Friendly Name: CDROM
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Boot entry ID: 5<br>
+OS Friendly Name: EFI Shell
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Boot entry ID: 6<br>
+OS Friendly Name: Boot Mirror C: - secondary plex<br>
+OsLoadOptions: N/A<br>
+BootFilePath: (null)<br>
+OsFilePath: (null)
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 30pt'>
+Use the bootcfg /list command to display all of the partitions on the shadow disk (disk-1). Locate the original Windows boot partition. It has the name of LDM data partition and has a partition length the same size as the original boot partition.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 30pt'>
+In this example, the boot partition is entry No: 3 with the GUID of {9aee294a-fa7d-4d4a-8a47-51a1dd1f9867}
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+C:\bootcfg /list 1
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Partition table info for Disk: 1
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Partition No: 1<br>
+Partition Style: GPT<br>
+Starting offset: 17,408<br>
+Partition length: 1,048,576<br>
+Partition GUID: {646091f1-b826-47e8-a72c-f22072e9a769}<br>
+GUID type: {5808c8aa-7e8f-42e0-85d2-e1e90434cfb3}<br>
+Partition name: LDM metadata partition
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Partition No: 2<br>
+Partition Style: GPT<br>
+Starting offset: 1,065,984<br>
+Partition length: 32,505,856<br>
+Partition GUID: {afb1e6b9-d8a6-456d-8df1-31327f94f3fe}<br>
+GUID type: {e3c9e316-0b5c-4db8-817d-f92df00215ae}<br>
+Partition name: Microsoft reserved partition
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Partition No: 3<br>
+Partition Style: GPT<br>
+Starting offset: 33,571,840<br>
+Partition length: 3,142,056,960<br>
+Partition GUID: {9aee294a-fa7d-4d4a-8a47-51a1dd1f9867}<br>
+GUID type: {af9b60a0-1431-4f62-bc68-3311714a69ad}<br>
+Partition name: LDM data partition
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Partition No: 4<br>
+Partition Style: GPT<br>
+Starting offset: 3,175,628,800<br>
+Partition length: 1,174,758,912<br>
+Partition GUID: {ab104fde-0782-4810-842e-0fb291e385ad}<br>
+GUID type: {af9b60a0-1431-4f62-bc68-3311714a69ad}<br>
+Partition name: LDM data partition
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 30pt'>
+Use the bootcfg /mirror command to add a boot entry into NVRAM for the shadow disks boot partition and give it a meaningful description. Use the Partition GUID from the boot partition extracted earlier.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+C:\&gt;bootcfg /mirror /add {9aee294a-fa7d-4d4a-8a47-51a1dd1f9867} /D "Original Shadow drive"
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+SUCCESS: The mirrored boot entry has been added.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 30pt'>
+Use bootcfg to display the boot menu items again. Notice the new entry was added to the bottom of the list. You can now use this entry to boot to the original Windows operating system.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 30pt'>
+-C:\&gt;bootcfg
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+Boot Options
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+Timeout: 5<br>
+Default: \Device\HarddiskVolume3\WINDOWS<br>
+CurrentBootEntryID: 1
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+Boot Entries
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+Boot entry ID: 1<br>
+OS Friendly Name: Microsoft Windows Server 2003, Enterprise Edition<br>
+OsLoadOptions: N/A<br>
+BootFilePath: \Device\HarddiskVolume1\EFI\Microsoft\WINNT50\ia64ldr.efi<br>
+OsFilePath: \Device\HarddiskVolume3\WINDOWS
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+Boot entry ID: 2<br>
+OS Friendly Name: Windows Server 2003, Enterprise Edition<br>
+OsLoadOptions: N/A<br>
+BootFilePath: (null)<br>
+OsFilePath: (null)
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+Boot entry ID: 3<br>
+OS Friendly Name: LS120
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+Boot entry ID: 4<br>
+OS Friendly Name: CDROM
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+Boot entry ID: 5<br>
+OS Friendly Name: EFI Shell
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+Boot entry ID: 6<br>
+OS Friendly Name: Boot Mirror C: - secondary plex<br>
+OsLoadOptions: N/A<br>
+BootFilePath: (null)<br>
+OsFilePath: (null)
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+Boot entry ID: 7<br>
+OS Friendly Name: Original Shadow drive<br>
+OsLoadOptions: N/A<br>
+BootFilePath: \Device\HarddiskVolume1\EFI\Microsoft\WINNT50\ia64ldr.efi<br>
+OsFilePath: (null)
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 30pt'>
+Shut down the computer, and then restart it. Select the boot menu item Original Shadow Drive to boot into the original operating system. This brings the server back into production. To fix the mirroring so that you can use the new disk-0 as your primary operating system drive and again be in a fault tolerant environment, continue with the following steps.
+</div>
+</p>
+<br>
+<p>
+Re-establish the primary boot drive mirror
+</p>
+<br>
+<p>
+While booted into the shadow drive (disk-1), you must "remove" the broken mirror, and then delete the missing disk. You can do this with either the Disk Management console or the Diskpart.exe utility.
+</p>
+<br>
+<p>
+Note
+</p>
+<br>
+<p>
+If there were additional volumes on the original failed dynamic disk-0, they must also be deleted before you are permitted to delete the missing disk.
+</p>
+<br>
+<p>
+<div style='padding-left: 30pt'>
+With Diskpart.exe, list the volumes, and then make a note of the volume number (Volume #) of the failed mirror. Select the mirror volume (volume #), and then view the details to see what missing disk (m#) you need to break the mirror from. In this example, you are working with volume 0 on missing disk m0.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+DISKPART&gt; list volume
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Volume ### Ltr Label Fs Type Size Status Info
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Volume 0 C PRIMARY NTFS Mirror 2996 MB Failed Rd Boot<br>
+Volume 1 D CD-ROM 0 B Healthy<br>
+Volume 2 Partition 2996 MB Healthy<br>
+Volume 3 Partition 102 MB Healthy System
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+DISKPART&gt; select volume 0
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+Volume 0 is the selected volume.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+DISKPART&gt; detail volume
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Disk ### Status Size Free Dyn Gpt
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Disk M0 Missing 2996 MB 0 B *<br>
+Disk 1 Online 4149 MB 1120 MB **
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 30pt'>
+Break the mirror by specifying the missing disk (m0), and then use the no keep option to remove the plex (partition) from the missing disk. List the volumes to make sure the mirror is gone and the volume is now listed as a simple volume.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+DISKPART&gt; break disk=m0 nokeep
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+The service did not update the boot file.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Diskpart successfully broke the mirror volume.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+DISKPART&gt; list volume
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Volume ### Ltr Label Fs Type Size Status Info
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Volume 0 C PRIMARY NTFS Simple 2996 MB Healthy Boot<br>
+Volume 1 D CD-ROM 0 B Healthy<br>
+Volume 2 Partition 2996 MB Healthy<br>
+Volume 3 Partition 102 MB Healthy System
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 30pt'>
+Select the missing disk (m0), and then delete it.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+DISKPART&gt; select disk m0
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Disk M0 is now the selected disk.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+DISKPART&gt; delete disk
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Diskpart successfully deleted the missing disk.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 30pt'>
+Delete the new Windows Server operating system partition on disk-0, because it is no longer required. This makes room to re-mirror back to disk-0.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 30pt'>
+Note
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 30pt'>
+This step is optional if you have sufficient free space on disk-0 to re-establish the mirror.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+DISKPART&gt; select disk 0
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Disk 0 is now the selected disk.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+DISKPART&gt; list partition
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Partition ### Type Size Offset
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Partition 1 System 102 MB 32 KB<br>
+Partition 2 Reserved 31 MB 102 MB<br>
+Partition 3 Primary 2996 MB 133 MB
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+DISKPART&gt; select partition 3
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Partition 3 is now the selected partition.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+DISKPART&gt; delete partition
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Diskpart successfully deleted the selected partition.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 30pt'>
+Convert disk-0 to Dynamic, and then select the operating system volume on disk-1 and re-establish the mirror back to disk-0. This puts the computer back into a fault tolerant environment, and after the mirror is healthy you can boot back into disk-0 with the new boot option that was automatically added to the NVRAM.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+DISKPART&gt; convert dynamic
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+Diskpart successfully converted the selected disk to dynamic format.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+DISKPART&gt; list volume
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Volume ### Ltr Label Fs Type Size Status Info
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Volume 0 C PRIMARY NTFS Simple 2996 MB Healthy Boot<br>
+Volume 1 D CD-ROM 0 B Healthy<br>
+Volume 3 Partition 102 MB Healthy System
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+DISKPART&gt; select volume 0
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Volume 0 is the selected volume.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+DISKPART&gt; add disk=0
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Diskpart succeeded in adding a mirror to the volume.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 30pt'>
+Wait for the mirror status to become healthy. You can use the list volume command repeatedly until the status changes from Rebuild to Healthy. Quit the Diskpart utility.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+DISKPART&gt; list volume
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Volume ### Ltr Label Fs Type Size Status Info
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Volume 0 C PRIMARY NTFS Mirror 2996 MB Healthy Boot
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+DISKPART&gt; exit
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Leaving Diskpart...
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 30pt'>
+Use the bootcfg command to view the new boot option that was added to the NVRAM. This new entry is named Boot Mirror C: - secondary plex and is most likely menu item ID 1. You can now clean up the original boot entries for the original operating system and the original secondary plex with the bootcfg /delete /ID # command.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+C:\&gt;bootcfg
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Boot Options
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Timeout: 30<br>
+Default: (null)<br>
+CurrentBootEntryID: 7
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Boot Entries
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Boot entry ID: 1<br>
+OS Friendly Name: Boot Mirror C: - secondary plex<br>
+OsLoadOptions: N/A<br>
+BootFilePath: \Device\HarddiskVolume1\EFI\Microsoft\WINNT50\ia64ldr.efi<br>
+OsFilePath: (null)
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Boot entry ID: 2<br>
+OS Friendly Name: Windows Server 2003, Enterprise<br>
+OsLoadOptions: N/A<br>
+BootFilePath: (null)<br>
+OsFilePath: \Device\HarddiskDmVolumes\PhysicalDmVolumes\BlockVolume1\WINDOWS
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Boot entry ID: 3<br>
+OS Friendly Name: LS120
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Boot entry ID: 4<br>
+OS Friendly Name: CDROM
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Boot entry ID: 5<br>
+OS Friendly Name: EFI Shell
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Boot entry ID: 6<br>
+OS Friendly Name: Boot Mirror C: - Secondary Plex<br>
+OsLoadOptions: N/A<br>
+BootFilePath: (null)<br>
+OsFilePath: \Device\HarddiskDmVolumes\PhysicalDmVolumes\BlockVolume1\WINDOWS
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+Boot entry ID: 7<br>
+OS Friendly Name: original shadow system<br>
+OsLoadOptions: N/A<br>
+BootFilePath: \Device\HarddiskVolume1\EFI\Microsoft\WINNT50\ia64ldr.efi<br>
+OsFilePath: \Device\HarddiskDmVolumes\PhysicalDmVolumes\BlockVolume1\WINDOWS
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+C:\&gt;bootcfg /delete /ID 6
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+SUCCESS: Specified boot entry has been deleted.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 60pt'>
+C:\&gt;bootcfg /delete /ID 2
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 90pt'>
+SUCCESS: Specified boot entry has been deleted.
+</div>
+</p>
+<br>
+<p>
+<div style='padding-left: 30pt'>
+This concludes this procedure and the remaining boot entries in the boot menu are all valid boot entries to boot to both the primary and shadow drives.
+</div>
+</p>
+
+	</div>
+
+	<br />
+
+	<div class='page-footer'>
+
+	</div>
+
+	
+
+</div>
+
+</body>
+</html>
