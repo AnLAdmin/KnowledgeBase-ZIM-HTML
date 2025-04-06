@@ -52,7 +52,7 @@
 <div class='header'>
 	[ <a href='./Hot_plug.html'>Prev</a> ]
 
-	[ <a href='../../../../index.html'>Index</a> ]
+	[ <span class='insen'>Index</span> ]
 
 	[ <a href='../Filesystem.html'>Next</a> ]
 </div>
@@ -98,8 +98,11 @@
 <li><a href="../../../host.html" title="host" class="page">host</a></li>
 <li><a href="../../../iftop.html" title="iftop" class="page">iftop</a></li>
 <li><a href="../../../incron.html" title="incron" class="page">incron</a></li>
+<li><a href="../../../Incus.html" title="Incus" class="page">Incus</a></li>
 <li><a href="../../../Javascript.html" title="Javascript" class="page">Javascript</a></li>
+<li><a href="../../../KVM.html" title="KVM" class="page">KVM</a></li>
 <li><a href="../../../less.html" title="less" class="page">less</a></li>
+<li><a href="../../../libvirt.html" title="libvirt" class="page">libvirt</a></li>
 <li><a href="../../../Linux.html" title="Linux" class="page">Linux</a>
 <ul>
 <li><a href="../../Booting.html" title="Booting" class="page">Booting</a></li>
@@ -141,7 +144,9 @@
 <li><a href="../../../PostgreSQL.html" title="PostgreSQL" class="page">PostgreSQL</a></li>
 <li><a href="../../../pyCharm.html" title="pyCharm" class="page">pyCharm</a></li>
 <li><a href="../../../Python.html" title="Python" class="page">Python</a></li>
+<li><a href="../../../QEmu-KVM.html" title="QEmu-KVM" class="page">QEmu-KVM</a></li>
 <li><a href="../../../Redis.html" title="Redis" class="page">Redis</a></li>
+<li><a href="../../../RouterOS.html" title="RouterOS" class="page">RouterOS</a></li>
 <li><a href="../../../Rust.html" title="Rust" class="page">Rust</a></li>
 <li><a href="../../../Snapper.html" title="Snapper" class="page">Snapper</a></li>
 <li><a href="../../../SSH.html" title="SSH" class="page">SSH</a></li>
@@ -154,14 +159,17 @@
 <li><a href="../../../update-alternatives.html" title="update-alternatives" class="page">update-alternatives</a></li>
 <li><a href="../../../Uptime_Kuma.html" title="Uptime Kuma" class="page">Uptime Kuma</a></li>
 <li><a href="../../../UrBackup.html" title="UrBackup" class="page">UrBackup</a></li>
+<li><a href="../../../Virt-viewer.html" title="Virt-viewer" class="page">Virt-viewer</a></li>
 <li><a href="../../../Visual_Studio_Code.html" title="Visual Studio Code" class="page">Visual Studio Code</a></li>
 <li><a href="../../../Vssadmin.html" title="Vssadmin" class="page">Vssadmin</a></li>
+<li><a href="../../../vSwitch.html" title="vSwitch" class="page">vSwitch</a></li>
 <li><a href="../../../w.html" title="w" class="page">w</a></li>
 <li><a href="../../../wc.html" title="wc" class="page">wc</a></li>
 <li><a href="../../../whereis.html" title="whereis" class="page">whereis</a></li>
 <li><a href="../../../which.html" title="which" class="page">which</a></li>
 <li><a href="../../../Windows.html" title="Windows" class="page">Windows</a></li>
 <li><a href="../../../winget.html" title="winget" class="page">winget</a></li>
+<li><a href="../../../WSL.html" title="WSL" class="page">WSL</a></li>
 <li><a href="../../../Zimbra.html" title="Zimbra" class="page">Zimbra</a></li>
 <li><a href="../../../ZIM-Desktop.html" title="ZIM-Desktop" class="page">ZIM-Desktop</a></li>
 </ul></li>
@@ -181,27 +189,51 @@
 Created Donnerstag 18 August 2022
 </p>
 <br>
-<ol style='padding-left: 30pt' type="1" start="1">
-<li>Unmount any filesystems on the disk. (umount ...)</li>
-<li>Deactivate any LVM groups. (vgchange -an)</li>
-<li>Make sure nothing is using the disk for anything.
-<ol type="a" start="1">
-<li>You Could unplug the HDD here, but it is recommended to also do the last two steps</li>
-</ol></li>
-<li>OPTIONAL: Spin the HDD down. (irrelevant for SSD's) (sudo hdparm -Y /dev/(whatever))</li>
-<li>Tell the system, that we are unplugging the HDD, so it can prepare itself. (echo 1 | sudo tee /sys/block/(whatever)/device/delete)</li>
-</ol>
-<br>
+<h2>Remark<a id="remark" class="h_anchor"></a></h2>
 <p>
-If you want to be extra cautious, do echo 1 | sudo tee /sys/block/(whatever)/device/delete first. That'll unregister the device from the kernel, so you know nothing's using it when you unplug it. When I do that with a drive in an eSATA enclosure, I can hear the drive's heads park themselves, so the kernel apparently tells the drive to prepare for power-down.
-</p>
-<br>
-<p>
-If you're using an AHCI controller, it should cope with devices being unplugged. If you're using some other sort of SATA controller, the driver might be confused by hotplugging.
-</p>
-<br>
-<p>
+If you're using an AHCI controller, it should cope with devices being unplugged. If you're using some other sort of SATA controller, the driver might be confused by hotplugging.<br>
 In my experience, SATA hotplugging (with AHCI) works pretty well in Linux. I've unplugged an optical drive, plugged in a hard drive, scanned it for errors, made a filesystem and copied data to it, unmounted and unplugged it, plugged in a differerent DVD drive, and burned a disc, all with the machine up and running.
+</p>
+<br>
+<h2>Remove disk<a id="remove-disk" class="h_anchor"></a></h2>
+<p>
+Identify the correct disk with the error message (device name, serial number, model name) and check information about it with:<br>
+<tt># lsblk --output NAME,LABEL,MOUNTPOINT,SIZE,TYPE,FSTYPE,RM,RO,PARTLABEL,UUID,SERIAL,MODEL</tt>
+</p>
+<br>
+<p>
+Unmount any filesystems on the disk. <br>
+<tt># umount &lt;Mount path&gt;</tt>
+</p>
+<br>
+<p>
+Deactivate any LVM groups. (vgchange -an)
+</p>
+<ul>
+<li class="unchecked-box">How to deactivate a LVM group <span class="zim-tag">@Todo</span></li>
+</ul>
+<br>
+<p>
+Make sure nothing is using the disk for anything.<br>
+-&gt; You Could unplug the HDD here, but it is recommended to also do the last two steps
+</p>
+<br>
+<p>
+OPTIONAL: Spin the HDD down. (irrelevant for SSD's):<br>
+<tt># hdparm -Y /dev/&lt;Device&gt;</tt>
+</p>
+<br>
+<p>
+Tell the system, that we are unplugging the HDD, so it can prepare itself:<br>
+<tt># echo 1 | sudo tee /sys/block/&lt;Device name&gt;/device/delete</tt><br>
+<div style='padding-left: 30pt'>
+That'll unregister the device from the kernel, so you know nothing's using it when you unplug it. When I do that with a drive in an eSATA enclosure, I can hear the drive's heads park themselves, so the kernel apparently tells the drive to prepare for power-down.
+</div>
+</p>
+<br>
+<p>
+Check if the disk is removed:<br>
+<tt># lsblk --output NAME,LABEL,MOUNTPOINT,SIZE,TYPE,FSTYPE,RM,RO,PARTLABEL,UUID,SERIAL,MODEL</tt>
 </p>
 
 	</div>
@@ -209,6 +241,16 @@ In my experience, SATA hotplugging (with AHCI) works pretty well in Linux. I've 
 	<br />
 
 	<div class='page-footer'>
+		<b>Backlinks:</b>
+
+		<a href='../../../libvirt/Operation/Replace_a_FAILING_OR_FAILED_disk.html'>Software:libvirt:Operation:Replace a FAILING OR FAILED disk</a>
+
+		
+		
+
+		<a href='../Filesystem/BTRFS/Operation/Replace_a_FAILING__or_FAILED_disk_from_a_pool.html'>Software:Linux:Storage:Filesystem:BTRFS:Operation:Replace a FAILING  or FAILED disk from a pool</a>
+
+		<br /><br />
 
 	</div>
 

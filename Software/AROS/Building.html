@@ -52,9 +52,9 @@
 <div class='header'>
 	[ <a href='../AROS.html'>Prev</a> ]
 
-	[ <a href='../../index.html'>Index</a> ]
+	[ <span class='insen'>Index</span> ]
 
-	[ <a href='../awk.html'>Next</a> ]
+	[ <a href='./Building/Setup_development_environment.html'>Next</a> ]
 </div>
 
 <hr />
@@ -75,7 +75,10 @@
 <li><a href="../ar.html" title="ar" class="page">ar</a></li>
 <li><a href="../AROS.html" title="AROS" class="page">AROS</a>
 <ul>
-<li><b>Building</b></li>
+<li><b>Building</b>
+<ul>
+<li><a href="./Building/Setup_development_environment.html" title="Setup development environment" class="page">Setup development environment</a></li>
+</ul></li>
 </ul></li>
 <li><a href="../awk.html" title="awk" class="page">awk</a></li>
 <li><a href="../Bash.html" title="Bash" class="page">Bash</a></li>
@@ -101,8 +104,11 @@
 <li><a href="../host.html" title="host" class="page">host</a></li>
 <li><a href="../iftop.html" title="iftop" class="page">iftop</a></li>
 <li><a href="../incron.html" title="incron" class="page">incron</a></li>
+<li><a href="../Incus.html" title="Incus" class="page">Incus</a></li>
 <li><a href="../Javascript.html" title="Javascript" class="page">Javascript</a></li>
+<li><a href="../KVM.html" title="KVM" class="page">KVM</a></li>
 <li><a href="../less.html" title="less" class="page">less</a></li>
+<li><a href="../libvirt.html" title="libvirt" class="page">libvirt</a></li>
 <li><a href="../Linux.html" title="Linux" class="page">Linux</a></li>
 <li><a href="../lsof.html" title="lsof" class="page">lsof</a></li>
 <li><a href="../Lxd.html" title="Lxd" class="page">Lxd</a></li>
@@ -123,7 +129,9 @@
 <li><a href="../PostgreSQL.html" title="PostgreSQL" class="page">PostgreSQL</a></li>
 <li><a href="../pyCharm.html" title="pyCharm" class="page">pyCharm</a></li>
 <li><a href="../Python.html" title="Python" class="page">Python</a></li>
+<li><a href="../QEmu-KVM.html" title="QEmu-KVM" class="page">QEmu-KVM</a></li>
 <li><a href="../Redis.html" title="Redis" class="page">Redis</a></li>
+<li><a href="../RouterOS.html" title="RouterOS" class="page">RouterOS</a></li>
 <li><a href="../Rust.html" title="Rust" class="page">Rust</a></li>
 <li><a href="../Snapper.html" title="Snapper" class="page">Snapper</a></li>
 <li><a href="../SSH.html" title="SSH" class="page">SSH</a></li>
@@ -136,14 +144,17 @@
 <li><a href="../update-alternatives.html" title="update-alternatives" class="page">update-alternatives</a></li>
 <li><a href="../Uptime_Kuma.html" title="Uptime Kuma" class="page">Uptime Kuma</a></li>
 <li><a href="../UrBackup.html" title="UrBackup" class="page">UrBackup</a></li>
+<li><a href="../Virt-viewer.html" title="Virt-viewer" class="page">Virt-viewer</a></li>
 <li><a href="../Visual_Studio_Code.html" title="Visual Studio Code" class="page">Visual Studio Code</a></li>
 <li><a href="../Vssadmin.html" title="Vssadmin" class="page">Vssadmin</a></li>
+<li><a href="../vSwitch.html" title="vSwitch" class="page">vSwitch</a></li>
 <li><a href="../w.html" title="w" class="page">w</a></li>
 <li><a href="../wc.html" title="wc" class="page">wc</a></li>
 <li><a href="../whereis.html" title="whereis" class="page">whereis</a></li>
 <li><a href="../which.html" title="which" class="page">which</a></li>
 <li><a href="../Windows.html" title="Windows" class="page">Windows</a></li>
 <li><a href="../winget.html" title="winget" class="page">winget</a></li>
+<li><a href="../WSL.html" title="WSL" class="page">WSL</a></li>
 <li><a href="../Zimbra.html" title="Zimbra" class="page">Zimbra</a></li>
 <li><a href="../ZIM-Desktop.html" title="ZIM-Desktop" class="page">ZIM-Desktop</a></li>
 </ul></li>
@@ -163,70 +174,6 @@
 Created Mittwoch 17 August 2022
 </p>
 <br>
-<h2>Some pointers<a id="some-pointers" class="h_anchor"></a></h2>
-<br>
-<h3>ae.amigalife.org - Message from <a href="https://ae.amigalife.org/index.php?PHPSESSID=b7001b030936090c9f0a2b9db9774a5c&topic=976.msg12679#top" title="magorium" class="https">magorium</a><a id="aeamigalifeorg---message-from-magorium" class="h_anchor"></a></h3>
-<p>
-Quote from: PortablE on August 16, 2022, 10:09:16 PM
-</p>
-<br>
-<p>
-<div style='padding-left: 30pt'>
-I hadn't realised that GCC/etc from the Linux-hosted version of AROS could be run outside of AROS (on Linux itself),
-</div>
-</p>
-<br>
-<p>
-Unfortunately it can't.
-</p>
-<br>
-<p>
-Quote
-</p>
-<br>
-<p>
-<div style='padding-left: 30pt'>
-... so it seems I need to look for a pre-compiled version of the Linux-hosted AROS &amp; it's developer tools (if that even exists).
-</div>
-</p>
-<br>
-<p>
-Pre compiled versions of AROS ABIv0 Linux hosted can be found at <a href="https://axrt.org/index.php?tab=download-aros" title="https://axrt.org/index.php?tab=download-aros" class="https">https://axrt.org/index.php?tab=download-aros</a>
-</p>
-<br>
-<p>
-And as always has been the case you can use the contrib archive to 'obtain' the development directory which contains the /native/ AROS gcc compiler and tools.
-</p>
-<br>
-<p>
-What deadwood wrote is that when you build AROS as described that it automatically builds the AROS cross-compiler for you.
-</p>
-<br>
-<p>
-That compiler is used to build AROS itself but can be used outside the AROS build process by providing --sysroot with indicated directory to cross compile for AROS.
-</p>
-<br>
-<p>
-Quote
-</p>
-<br>
-<p>
-<div style='padding-left: 30pt'>
-Thanks for the pointer - but I was hoping for a pre-compiled version that would avoid me having to install subversion &amp; the huge number of other dependencies needed to build AROS.  (That may not be a show-stopper, but it will at least greatly delay anything AROS-related that I do, as I don't want to have all that 'junk' installed onto my main Linux system.  Possibly I can use chroot or toolbox to keep it entirely separate, but I have not used either of them yet, and they will probably be more complicated than I hope.)
-</div>
-</p>
-<br>
-<p>
-I have no idea about your setup but in case you do have a development machine that has enough free ram (&gt; 8 GB, Unfortunately I do not have an exact figure) then there is no need for a (permanent) installation.
-</p>
-<br>
-<p>
-The build instructions as indicated will build everything outside your current system setup. If your setup is able to accomplish that in ram (ramdisk) then you could zip/tarball the directories that you require/desire and re-use those at your disposal (to avoid having to build the whole AROS tree over and over again). Not an ideal solution but it might perhaps be able to address some of your concerns.
-</p>
-<br>
-<p>
-But perhaps deadwood has a quicker/better solution as I am not very familiar with AROS' build system.
-</p>
 
 	</div>
 
